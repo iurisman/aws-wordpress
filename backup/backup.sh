@@ -6,7 +6,7 @@ set -x
 
 if [[ $# -ne 4 ]]; then
   me=$(basename $0)
-  echo "Usage: $me <wordpress-root-dir> <mysql-username> <mysql-password> <s3-bucket-url>"
+  echo "Usage: $me <wordpress-root-dir> <mysql-username> <mysql-password> <s3-bucket-uri>"
   exit 2
 fi
 wp_root=$1
