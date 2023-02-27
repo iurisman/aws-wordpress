@@ -1,32 +1,18 @@
 #!/bin/sh
-
 #
-mysql_root_password=changeme
+# This is run by packer while bulding the AMI.
 #
-mysql_wp_password=changeme
-
 echo "Installing Apache 2 web server ..."
 sudo apt-get update
 sudo apt install -y apache2
 
-echo "Installing php runtime and php mysql connector ..."
+echo "Installing PHP runtime and PHP MySQL connector ..."
 sudo apt install -y php libapache2-mod-php php-mysql
 
 echo "Installing MySQL server"
 sudo apt install -y mysql-server
 
-echo "Setting up MySQL database"
-sudo mysql -u root <<EOF
--- Set password for root
-ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password by '$mysql_root_password';
--- Create database user to own wordpress db
-CREATE USER 'wp_user'@localhost IDENTIFIED BY '$mysql_wp_password';
--- Create wordpress db
-CREATE DATABASE wp;
-GRANT ALL PRIVILEGES ON wp.* TO 'wp_user'@localhost;
-EOF
-
-echo "Installing Download wordpress"
+echo "Installing Wordpress"
 cd /tmp
 wget https://wordpress.org/latest.tar.gz
 tar -xvf latest.tar.gz
@@ -37,5 +23,3 @@ echo "Installing Certbot"
 sudo add-apt-repository ppa:certbot/certbot
 sudo apt install -y certbot python3-certbot-apache
 
-echo "*** Remember to run `sudo certbot --apache` to install SSL certificate to Apache ***"
-# sudo certbot --apache

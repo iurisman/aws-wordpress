@@ -1,61 +1,72 @@
 [1;32mamazon-ebs.ubuntu: output will be in this color.[0m
 
 [1;32m==> amazon-ebs.ubuntu: Prevalidating any provided VPC information[0m
-[1;32m==> amazon-ebs.ubuntu: Prevalidating AMI Name: aws-wp-ubuntu[0m
+[1;32m==> amazon-ebs.ubuntu: Prevalidating AMI Name: iurisman-wp-ubuntu[0m
 [0;32m    amazon-ebs.ubuntu: Found Image ID: ami-0e2162f7f3582e92f[0m
-[1;32m==> amazon-ebs.ubuntu: Creating temporary keypair: packer_63fcdb02-f60c-70ba-ffc4-ba7697d5cd7a[0m
-[1;32m==> amazon-ebs.ubuntu: Creating temporary security group for this instance: packer_63fcdb04-821c-81e8-a9c8-6911af32fdf2[0m
+[1;32m==> amazon-ebs.ubuntu: Creating temporary keypair: packer_63fd0ceb-2474-ff30-8cac-1b2b84483112[0m
+[1;32m==> amazon-ebs.ubuntu: Creating temporary security group for this instance: packer_63fd0cee-3ab7-f276-0865-beaf6abf71ac[0m
 [1;32m==> amazon-ebs.ubuntu: Authorizing access to port 22 from [0.0.0.0/0] in the temporary security groups...[0m
 [1;32m==> amazon-ebs.ubuntu: Launching a source AWS instance...[0m
-[0;32m    amazon-ebs.ubuntu: Instance ID: i-0704cba7ce6dfeaa9[0m
-[1;32m==> amazon-ebs.ubuntu: Waiting for instance (i-0704cba7ce6dfeaa9) to become ready...[0m
-[1;32m==> amazon-ebs.ubuntu: Using SSH communicator to connect: 34.237.0.106[0m
+[0;32m    amazon-ebs.ubuntu: Instance ID: i-0cdae3b7b884d7784[0m
+[1;32m==> amazon-ebs.ubuntu: Waiting for instance (i-0cdae3b7b884d7784) to become ready...[0m
+[1;32m==> amazon-ebs.ubuntu: Using SSH communicator to connect: 44.192.43.85[0m
 [1;32m==> amazon-ebs.ubuntu: Waiting for SSH to become available...[0m
 [1;32m==> amazon-ebs.ubuntu: Connected to SSH![0m
 [1;32m==> amazon-ebs.ubuntu: Provisioning with shell script: build.sh[0m
 [0;32m    amazon-ebs.ubuntu: Installing Apache 2 web server ...[0m
-[0;32m    amazon-ebs.ubuntu: Get:1 http://security.ubuntu.com/ubuntu jammy-security InRelease [110 kB][0m
-[0;32m    amazon-ebs.ubuntu: Hit:2 http://archive.ubuntu.com/ubuntu jammy InRelease[0m
-[0;32m    amazon-ebs.ubuntu: Get:3 http://archive.ubuntu.com/ubuntu jammy-updates InRelease [119 kB][0m
-[0;32m    amazon-ebs.ubuntu: Get:4 http://archive.ubuntu.com/ubuntu jammy-backports InRelease [107 kB][0m
+[0;32m    amazon-ebs.ubuntu: Hit:1 http://archive.ubuntu.com/ubuntu jammy InRelease[0m
+[0;32m    amazon-ebs.ubuntu: Get:2 http://archive.ubuntu.com/ubuntu jammy-updates InRelease [119 kB][0m
+[0;32m    amazon-ebs.ubuntu: Get:3 http://archive.ubuntu.com/ubuntu jammy-backports InRelease [107 kB][0m
+[0;32m    amazon-ebs.ubuntu: Get:4 http://security.ubuntu.com/ubuntu jammy-security InRelease [110 kB][0m
 [0;32m    amazon-ebs.ubuntu: Get:5 http://archive.ubuntu.com/ubuntu jammy/universe amd64 Packages [14.1 MB][0m
 [0;32m    amazon-ebs.ubuntu: Get:6 http://archive.ubuntu.com/ubuntu jammy/universe Translation-en [5652 kB][0m
-[0;32m    amazon-ebs.ubuntu: Get:7 http://security.ubuntu.com/ubuntu jammy-security/main amd64 Packages [645 kB][0m
-[0;32m    amazon-ebs.ubuntu: Get:8 http://security.ubuntu.com/ubuntu jammy-security/main Translation-en [135 kB][0m
-[0;32m    amazon-ebs.ubuntu: Get:9 http://security.ubuntu.com/ubuntu jammy-security/main amd64 c-n-f Metadata [8500 B][0m
-[0;32m    amazon-ebs.ubuntu: Get:10 http://security.ubuntu.com/ubuntu jammy-security/restricted amd64 Packages [582 kB][0m
-[0;32m    amazon-ebs.ubuntu: Get:11 http://security.ubuntu.com/ubuntu jammy-security/restricted Translation-en [90.4 kB][0m
-[0;32m    amazon-ebs.ubuntu: Get:12 http://security.ubuntu.com/ubuntu jammy-security/universe amd64 Packages [680 kB][0m
-[0;32m    amazon-ebs.ubuntu: Get:13 http://security.ubuntu.com/ubuntu jammy-security/universe Translation-en [105 kB][0m
-[0;32m    amazon-ebs.ubuntu: Get:14 http://security.ubuntu.com/ubuntu jammy-security/universe amd64 c-n-f Metadata [13.2 kB][0m
-[0;32m    amazon-ebs.ubuntu: Get:15 http://security.ubuntu.com/ubuntu jammy-security/multiverse amd64 Packages [4960 B][0m
-[0;32m    amazon-ebs.ubuntu: Get:16 http://security.ubuntu.com/ubuntu jammy-security/multiverse Translation-en [996 B][0m
-[0;32m    amazon-ebs.ubuntu: Get:17 http://security.ubuntu.com/ubuntu jammy-security/multiverse amd64 c-n-f Metadata [240 B][0m
-[0;32m    amazon-ebs.ubuntu: Get:18 http://archive.ubuntu.com/ubuntu jammy/universe amd64 c-n-f Metadata [286 kB][0m
-[0;32m    amazon-ebs.ubuntu: Get:19 http://archive.ubuntu.com/ubuntu jammy/multiverse amd64 Packages [217 kB][0m
-[0;32m    amazon-ebs.ubuntu: Get:20 http://archive.ubuntu.com/ubuntu jammy/multiverse Translation-en [112 kB][0m
-[0;32m    amazon-ebs.ubuntu: Get:21 http://archive.ubuntu.com/ubuntu jammy/multiverse amd64 c-n-f Metadata [8372 B][0m
-[0;32m    amazon-ebs.ubuntu: Get:22 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 Packages [899 kB][0m
-[0;32m    amazon-ebs.ubuntu: Get:23 http://archive.ubuntu.com/ubuntu jammy-updates/main Translation-en [197 kB][0m
-[0;32m    amazon-ebs.ubuntu: Get:24 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 c-n-f Metadata [13.5 kB][0m
-[0;32m    amazon-ebs.ubuntu: Get:25 http://archive.ubuntu.com/ubuntu jammy-updates/restricted amd64 Packages [624 kB][0m
-[0;32m    amazon-ebs.ubuntu: Get:26 http://archive.ubuntu.com/ubuntu jammy-updates/restricted Translation-en [96.3 kB][0m
-[0;32m    amazon-ebs.ubuntu: Get:27 http://archive.ubuntu.com/ubuntu jammy-updates/universe amd64 Packages [856 kB][0m
-[0;32m    amazon-ebs.ubuntu: Get:28 http://archive.ubuntu.com/ubuntu jammy-updates/universe Translation-en [164 kB][0m
-[0;32m    amazon-ebs.ubuntu: Get:29 http://archive.ubuntu.com/ubuntu jammy-updates/universe amd64 c-n-f Metadata [17.3 kB][0m
-[0;32m    amazon-ebs.ubuntu: Get:30 http://archive.ubuntu.com/ubuntu jammy-updates/multiverse amd64 Packages [9672 B][0m
-[0;32m    amazon-ebs.ubuntu: Get:31 http://archive.ubuntu.com/ubuntu jammy-updates/multiverse Translation-en [3260 B][0m
-[0;32m    amazon-ebs.ubuntu: Get:32 http://archive.ubuntu.com/ubuntu jammy-updates/multiverse amd64 c-n-f Metadata [456 B][0m
-[0;32m    amazon-ebs.ubuntu: Get:33 http://archive.ubuntu.com/ubuntu jammy-backports/main amd64 Packages [40.7 kB][0m
-[0;32m    amazon-ebs.ubuntu: Get:34 http://archive.ubuntu.com/ubuntu jammy-backports/main Translation-en [9800 B][0m
-[0;32m    amazon-ebs.ubuntu: Get:35 http://archive.ubuntu.com/ubuntu jammy-backports/main amd64 c-n-f Metadata [392 B][0m
-[0;32m    amazon-ebs.ubuntu: Get:36 http://archive.ubuntu.com/ubuntu jammy-backports/restricted amd64 c-n-f Metadata [116 B][0m
-[0;32m    amazon-ebs.ubuntu: Get:37 http://archive.ubuntu.com/ubuntu jammy-backports/universe amd64 Packages [19.5 kB][0m
-[0;32m    amazon-ebs.ubuntu: Get:38 http://archive.ubuntu.com/ubuntu jammy-backports/universe Translation-en [14.0 kB][0m
-[0;32m    amazon-ebs.ubuntu: Get:39 http://archive.ubuntu.com/ubuntu jammy-backports/universe amd64 c-n-f Metadata [392 B][0m
-[0;32m    amazon-ebs.ubuntu: Get:40 http://archive.ubuntu.com/ubuntu jammy-backports/multiverse amd64 c-n-f Metadata [116 B][0m
-[0;32m    amazon-ebs.ubuntu: Fetched 25.9 MB in 9s (2880 kB/s)[0m
+[0;32m    amazon-ebs.ubuntu: Get:7 http://archive.ubuntu.com/ubuntu jammy/universe amd64 c-n-f Metadata [286 kB][0m
+[0;32m    amazon-ebs.ubuntu: Get:8 http://archive.ubuntu.com/ubuntu jammy/multiverse amd64 Packages [217 kB][0m
+[0;32m    amazon-ebs.ubuntu: Get:9 http://archive.ubuntu.com/ubuntu jammy/multiverse Translation-en [112 kB][0m
+[0;32m    amazon-ebs.ubuntu: Get:10 http://archive.ubuntu.com/ubuntu jammy/multiverse amd64 c-n-f Metadata [8372 B][0m
+[0;32m    amazon-ebs.ubuntu: Get:11 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 Packages [899 kB][0m
+[0;32m    amazon-ebs.ubuntu: Get:12 http://archive.ubuntu.com/ubuntu jammy-updates/main Translation-en [197 kB][0m
+[0;32m    amazon-ebs.ubuntu: Get:13 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 c-n-f Metadata [13.5 kB][0m
+[0;32m    amazon-ebs.ubuntu: Get:14 http://archive.ubuntu.com/ubuntu jammy-updates/restricted amd64 Packages [624 kB][0m
+[0;32m    amazon-ebs.ubuntu: Get:15 http://archive.ubuntu.com/ubuntu jammy-updates/restricted Translation-en [96.3 kB][0m
+[0;32m    amazon-ebs.ubuntu: Get:16 http://archive.ubuntu.com/ubuntu jammy-updates/universe amd64 Packages [857 kB][0m
+[0;32m    amazon-ebs.ubuntu: Get:17 http://archive.ubuntu.com/ubuntu jammy-updates/universe Translation-en [165 kB][0m
+[0;32m    amazon-ebs.ubuntu: Get:18 http://archive.ubuntu.com/ubuntu jammy-updates/universe amd64 c-n-f Metadata [17.3 kB][0m
+[0;32m    amazon-ebs.ubuntu: Get:19 http://archive.ubuntu.com/ubuntu jammy-updates/multiverse amd64 Packages [9672 B][0m
+[0;32m    amazon-ebs.ubuntu: Get:20 http://archive.ubuntu.com/ubuntu jammy-updates/multiverse Translation-en [3260 B][0m
+[0;32m    amazon-ebs.ubuntu: Get:21 http://archive.ubuntu.com/ubuntu jammy-updates/multiverse amd64 c-n-f Metadata [456 B][0m
+[0;32m    amazon-ebs.ubuntu: Get:22 http://archive.ubuntu.com/ubuntu jammy-backports/main amd64 Packages [40.7 kB][0m
+[0;32m    amazon-ebs.ubuntu: Get:23 http://archive.ubuntu.com/ubuntu jammy-backports/main Translation-en [9800 B][0m
+[0;32m    amazon-ebs.ubuntu: Get:24 http://archive.ubuntu.com/ubuntu jammy-backports/main amd64 c-n-f Metadata [392 B][0m
+[0;32m    amazon-ebs.ubuntu: Get:25 http://archive.ubuntu.com/ubuntu jammy-backports/restricted amd64 c-n-f Metadata [116 B][0m
+[0;32m    amazon-ebs.ubuntu: Get:26 http://archive.ubuntu.com/ubuntu jammy-backports/universe amd64 Packages [19.5 kB][0m
+[0;32m    amazon-ebs.ubuntu: Get:27 http://archive.ubuntu.com/ubuntu jammy-backports/universe Translation-en [14.0 kB][0m
+[0;32m    amazon-ebs.ubuntu: Get:28 http://archive.ubuntu.com/ubuntu jammy-backports/universe amd64 c-n-f Metadata [392 B][0m
+[0;32m    amazon-ebs.ubuntu: Get:29 http://archive.ubuntu.com/ubuntu jammy-backports/multiverse amd64 c-n-f Metadata [116 B][0m
+[0;32m    amazon-ebs.ubuntu: Get:30 http://security.ubuntu.com/ubuntu jammy-security/main amd64 Packages [645 kB][0m
+[0;32m    amazon-ebs.ubuntu: Get:31 http://security.ubuntu.com/ubuntu jammy-security/main Translation-en [135 kB][0m
+[0;32m    amazon-ebs.ubuntu: Get:32 http://security.ubuntu.com/ubuntu jammy-security/main amd64 c-n-f Metadata [8500 B][0m
+[0;32m    amazon-ebs.ubuntu: Get:33 http://security.ubuntu.com/ubuntu jammy-security/restricted amd64 Packages [582 kB][0m
+[0;32m    amazon-ebs.ubuntu: Get:34 http://security.ubuntu.com/ubuntu jammy-security/restricted Translation-en [90.4 kB][0m
+[0;32m    amazon-ebs.ubuntu: Get:35 http://security.ubuntu.com/ubuntu jammy-security/universe amd64 Packages [681 kB][0m
+[0;32m    amazon-ebs.ubuntu: Get:36 http://security.ubuntu.com/ubuntu jammy-security/universe Translation-en [106 kB][0m
+[0;32m    amazon-ebs.ubuntu: Get:37 http://security.ubuntu.com/ubuntu jammy-security/universe amd64 c-n-f Metadata [13.2 kB][0m
+[0;32m    amazon-ebs.ubuntu: Get:38 http://security.ubuntu.com/ubuntu jammy-security/multiverse amd64 Packages [4960 B][0m
+[0;32m    amazon-ebs.ubuntu: Get:39 http://security.ubuntu.com/ubuntu jammy-security/multiverse Translation-en [996 B][0m
+[0;32m    amazon-ebs.ubuntu: Get:40 http://security.ubuntu.com/ubuntu jammy-security/multiverse amd64 c-n-f Metadata [240 B][0m
+[1;31m==> amazon-ebs.ubuntu: E: Could not open file /var/lib/apt/lists/archive.ubuntu.com_ubuntu_dists_jammy-backports_multiverse_cnf_Commands-amd64 - open (2: No such file or directory)[0m
+[0;32m    amazon-ebs.ubuntu: Fetched 25.9 MB in 9s (2870 kB/s)[0m
+[1;31m==> amazon-ebs.ubuntu: Traceback (most recent call last):[0m
+[1;31m==> amazon-ebs.ubuntu:   File "/usr/lib/cnf-update-db", line 32, in <module>[0m
+[1;31m==> amazon-ebs.ubuntu:     col.create(db)[0m
+[1;31m==> amazon-ebs.ubuntu:   File "/usr/lib/python3/dist-packages/CommandNotFound/db/creator.py", line 95, in create[0m
+[1;31m==> amazon-ebs.ubuntu:     self._fill_commands(con)[0m
+[1;31m==> amazon-ebs.ubuntu:   File "/usr/lib/python3/dist-packages/CommandNotFound/db/creator.py", line 144, in _fill_commands[0m
+[1;31m==> amazon-ebs.ubuntu:     raise subprocess.CalledProcessError(returncode=sub.returncode,[0m
+[1;31m==> amazon-ebs.ubuntu: subprocess.CalledProcessError: Command '/usr/lib/apt/apt-helper cat-file /var/lib/apt/lists/archive.ubuntu.com_ubuntu_dists_jammy-backports_multiverse_cnf_Commands-amd64' returned non-zero exit status 100.[0m
 [0;32m    amazon-ebs.ubuntu: Reading package lists...[0m
+[1;31m==> amazon-ebs.ubuntu: E: Problem executing scripts APT::Update::Post-Invoke-Success 'if /usr/bin/test -w /var/lib/command-not-found/ -a -e /usr/lib/cnf-update-db; then /usr/lib/cnf-update-db > /dev/null; fi'[0m
+[1;31m==> amazon-ebs.ubuntu: E: Sub-process returned an error code[0m
 [1;31m==> amazon-ebs.ubuntu:[0m
 [1;31m==> amazon-ebs.ubuntu: WARNING: apt does not have a stable CLI interface. Use with caution in scripts.[0m
 [1;31m==> amazon-ebs.ubuntu:[0m
@@ -73,7 +84,7 @@
 [0;32m    amazon-ebs.ubuntu:   apache2 apache2-bin apache2-data apache2-utils bzip2 libapr1 libaprutil1[0m
 [0;32m    amazon-ebs.ubuntu:   libaprutil1-dbd-sqlite3 libaprutil1-ldap liblua5.3-0 mailcap mime-support[0m
 [0;32m    amazon-ebs.ubuntu:   ssl-cert[0m
-[0;32m    amazon-ebs.ubuntu: 0 upgraded, 13 newly installed, 0 to remove and 15 not upgraded.[0m
+[0;32m    amazon-ebs.ubuntu: 0 upgraded, 13 newly installed, 0 to remove and 17 not upgraded.[0m
 [0;32m    amazon-ebs.ubuntu: Need to get 2138 kB of archives.[0m
 [0;32m    amazon-ebs.ubuntu: After this operation, 8505 kB of additional disk space will be used.[0m
 [0;32m    amazon-ebs.ubuntu: Get:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-updates/main amd64 libapr1 amd64 1.7.0-8ubuntu0.22.04.1 [108 kB][0m
@@ -96,7 +107,7 @@
 [1;31m==> amazon-ebs.ubuntu: debconf: (This frontend requires a controlling tty.)[0m
 [1;31m==> amazon-ebs.ubuntu: debconf: falling back to frontend: Teletype[0m
 [1;31m==> amazon-ebs.ubuntu: dpkg-preconfigure: unable to re-open stdin:[0m
-[0;32m    amazon-ebs.ubuntu: Fetched 2138 kB in 0s (26.3 MB/s)[0m
+[0;32m    amazon-ebs.ubuntu: Fetched 2138 kB in 0s (33.5 MB/s)[0m
 [0;32m    amazon-ebs.ubuntu: Selecting previously unselected package libapr1:amd64.[0m
 [0;32m    amazon-ebs.ubuntu: (Reading database ... 63606 files and directories currently installed.)[0m
 [0;32m    amazon-ebs.ubuntu: Preparing to unpack .../00-libapr1_1.7.0-8ubuntu0.22.04.1_amd64.deb ...[0m
@@ -193,9 +204,9 @@
 [0;32m    amazon-ebs.ubuntu: No user sessions are running outdated binaries.[0m
 [0;32m    amazon-ebs.ubuntu:[0m
 [0;32m    amazon-ebs.ubuntu: No VM guests are running outdated hypervisor (qemu) binaries on this host.[0m
+[0;32m    amazon-ebs.ubuntu: Installing PHP runtime and PHP MySQL connector ...[0m
 [1;31m==> amazon-ebs.ubuntu:[0m
 [1;31m==> amazon-ebs.ubuntu: WARNING: apt does not have a stable CLI interface. Use with caution in scripts.[0m
-[0;32m    amazon-ebs.ubuntu: Installing php runtime and php mysql connector ...[0m
 [1;31m==> amazon-ebs.ubuntu:[0m
 [0;32m    amazon-ebs.ubuntu: Reading package lists...[0m
 [0;32m    amazon-ebs.ubuntu: Building dependency tree...[0m
@@ -208,7 +219,7 @@
 [0;32m    amazon-ebs.ubuntu: The following NEW packages will be installed:[0m
 [0;32m    amazon-ebs.ubuntu:   libapache2-mod-php libapache2-mod-php8.1 php php-common php-mysql php8.1[0m
 [0;32m    amazon-ebs.ubuntu:   php8.1-cli php8.1-common php8.1-mysql php8.1-opcache php8.1-readline[0m
-[0;32m    amazon-ebs.ubuntu: 0 upgraded, 11 newly installed, 0 to remove and 15 not upgraded.[0m
+[0;32m    amazon-ebs.ubuntu: 0 upgraded, 11 newly installed, 0 to remove and 17 not upgraded.[0m
 [0;32m    amazon-ebs.ubuntu: Need to get 5264 kB of archives.[0m
 [0;32m    amazon-ebs.ubuntu: After this operation, 21.8 MB of additional disk space will be used.[0m
 [0;32m    amazon-ebs.ubuntu: Get:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy/main amd64 php-common all 2:92ubuntu1 [12.4 kB][0m
@@ -229,7 +240,7 @@
 [1;31m==> amazon-ebs.ubuntu: debconf: (This frontend requires a controlling tty.)[0m
 [1;31m==> amazon-ebs.ubuntu: debconf: falling back to frontend: Teletype[0m
 [1;31m==> amazon-ebs.ubuntu: dpkg-preconfigure: unable to re-open stdin:[0m
-[0;32m    amazon-ebs.ubuntu: Fetched 5264 kB in 0s (52.8 MB/s)[0m
+[0;32m    amazon-ebs.ubuntu: Fetched 5264 kB in 0s (18.6 MB/s)[0m
 [0;32m    amazon-ebs.ubuntu: Selecting previously unselected package php-common.[0m
 [0;32m    amazon-ebs.ubuntu: (Reading database ... 64375 files and directories currently installed.)[0m
 [0;32m    amazon-ebs.ubuntu: Preparing to unpack .../00-php-common_2%3a92ubuntu1_all.deb ...[0m
@@ -443,7 +454,7 @@
 [0;32m    amazon-ebs.ubuntu:   liburi-perl mecab-ipadic mecab-ipadic-utf8 mecab-utils mysql-client-8.0[0m
 [0;32m    amazon-ebs.ubuntu:   mysql-client-core-8.0 mysql-common mysql-server mysql-server-8.0[0m
 [0;32m    amazon-ebs.ubuntu:   mysql-server-core-8.0[0m
-[0;32m    amazon-ebs.ubuntu: 0 upgraded, 28 newly installed, 0 to remove and 15 not upgraded.[0m
+[0;32m    amazon-ebs.ubuntu: 0 upgraded, 28 newly installed, 0 to remove and 17 not upgraded.[0m
 [0;32m    amazon-ebs.ubuntu: Need to get 29.5 MB of archives.[0m
 [0;32m    amazon-ebs.ubuntu: After this operation, 242 MB of additional disk space will be used.[0m
 [0;32m    amazon-ebs.ubuntu: Get:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy/main amd64 mysql-common all 5.8+1.0.8 [7212 B][0m
@@ -481,7 +492,7 @@
 [1;31m==> amazon-ebs.ubuntu: debconf: (This frontend requires a controlling tty.)[0m
 [1;31m==> amazon-ebs.ubuntu: debconf: falling back to frontend: Teletype[0m
 [1;31m==> amazon-ebs.ubuntu: dpkg-preconfigure: unable to re-open stdin:[0m
-[0;32m    amazon-ebs.ubuntu: Fetched 29.5 MB in 1s (41.6 MB/s)[0m
+[0;32m    amazon-ebs.ubuntu: Fetched 29.5 MB in 5s (5509 kB/s)[0m
 [0;32m    amazon-ebs.ubuntu: Selecting previously unselected package mysql-common.[0m
 [0;32m    amazon-ebs.ubuntu: (Reading database ... 64524 files and directories currently installed.)[0m
 [0;32m    amazon-ebs.ubuntu: Preparing to unpack .../0-mysql-common_5.8+1.0.8_all.deb ...[0m
@@ -674,7 +685,7 @@
 [0;32m    amazon-ebs.ubuntu: update-alternatives: using /etc/mysql/mysql.cnf to provide /etc/mysql/my.cnf (my.cnf) in auto mode[0m
 [0;32m    amazon-ebs.ubuntu: Renaming removed key_buffer and myisam-recover options (if present)[0m
 [0;32m    amazon-ebs.ubuntu: mysqld will log errors to /var/log/mysql/error.log[0m
-[0;32m    amazon-ebs.ubuntu: mysqld is running as pid 10535[0m
+[0;32m    amazon-ebs.ubuntu: mysqld is running as pid 10548[0m
 [0;32m    amazon-ebs.ubuntu: Created symlink /etc/systemd/system/multi-user.target.wants/mysql.service → /lib/systemd/system/mysql.service.[0m
 [0;32m    amazon-ebs.ubuntu: Setting up libcgi-pm-perl (4.54-1) ...[0m
 [0;32m    amazon-ebs.ubuntu: Setting up libhtml-template-perl (2.97-1.1) ...[0m
@@ -692,462 +703,461 @@
 [0;32m    amazon-ebs.ubuntu: No user sessions are running outdated binaries.[0m
 [0;32m    amazon-ebs.ubuntu:[0m
 [0;32m    amazon-ebs.ubuntu: No VM guests are running outdated hypervisor (qemu) binaries on this host.[0m
-[0;32m    amazon-ebs.ubuntu: Setting up MySQL database[0m
-[0;32m    amazon-ebs.ubuntu: Installing Download wordpress[0m
-[1;31m==> amazon-ebs.ubuntu: --2023-02-27 16:34:10--  https://wordpress.org/latest.tar.gz[0m
+[0;32m    amazon-ebs.ubuntu: Installing Wordpress[0m
+[1;31m==> amazon-ebs.ubuntu: --2023-02-27 20:09:26--  https://wordpress.org/latest.tar.gz[0m
 [1;31m==> amazon-ebs.ubuntu: Resolving wordpress.org (wordpress.org)... 198.143.164.252[0m
 [1;31m==> amazon-ebs.ubuntu: Connecting to wordpress.org (wordpress.org)|198.143.164.252|:443... connected.[0m
 [1;31m==> amazon-ebs.ubuntu: HTTP request sent, awaiting response... 200 OK[0m
 [1;31m==> amazon-ebs.ubuntu: Length: 22751086 (22M) [application/octet-stream][0m
 [1;31m==> amazon-ebs.ubuntu: Saving to: ‘latest.tar.gz’[0m
 [1;31m==> amazon-ebs.ubuntu:[0m
-[1;31m==> amazon-ebs.ubuntu:      0K .......... .......... .......... .......... ..........  0% 1.39M 16s[0m
-[1;31m==> amazon-ebs.ubuntu:     50K .......... .......... .......... .......... ..........  0% 1.69M 14s[0m
-[1;31m==> amazon-ebs.ubuntu:    100K .......... .......... .......... .......... ..........  0% 2.14M 13s[0m
-[1;31m==> amazon-ebs.ubuntu:    150K .......... .......... .......... .......... ..........  0% 2.04M 12s[0m
-[1;31m==> amazon-ebs.ubuntu:    200K .......... .......... .......... .......... ..........  1% 1.96M 12s[0m
-[1;31m==> amazon-ebs.ubuntu:    250K .......... .......... .......... .......... ..........  1% 1.93M 12s[0m
-[1;31m==> amazon-ebs.ubuntu:    300K .......... .......... .......... .......... ..........  1% 6.26M 11s[0m
-[1;31m==> amazon-ebs.ubuntu:    350K .......... .......... .......... .......... ..........  1% 2.09M 10s[0m
-[1;31m==> amazon-ebs.ubuntu:    400K .......... .......... .......... .......... ..........  2% 4.77M 10s[0m
-[1;31m==> amazon-ebs.ubuntu:    450K .......... .......... .......... .......... ..........  2% 6.01M 9s[0m
-[1;31m==> amazon-ebs.ubuntu:    500K .......... .......... .......... .......... ..........  2% 6.54M 9s[0m
-[1;31m==> amazon-ebs.ubuntu:    550K .......... .......... .......... .......... ..........  2% 5.83M 8s[0m
-[1;31m==> amazon-ebs.ubuntu:    600K .......... .......... .......... .......... ..........  2% 4.93M 8s[0m
-[1;31m==> amazon-ebs.ubuntu:    650K .......... .......... .......... .......... ..........  3% 6.43M 7s[0m
-[1;31m==> amazon-ebs.ubuntu:    700K .......... .......... .......... .......... ..........  3% 6.86M 7s[0m
-[1;31m==> amazon-ebs.ubuntu:    750K .......... .......... .......... .......... ..........  3% 7.48M 7s[0m
-[1;31m==> amazon-ebs.ubuntu:    800K .......... .......... .......... .......... ..........  3% 9.40M 7s[0m
-[1;31m==> amazon-ebs.ubuntu:    850K .......... .......... .......... .......... ..........  4% 7.30M 6s[0m
-[1;31m==> amazon-ebs.ubuntu:    900K .......... .......... .......... .......... ..........  4% 5.34M 6s[0m
-[1;31m==> amazon-ebs.ubuntu:    950K .......... .......... .......... .......... ..........  4% 6.22M 6s[0m
-[1;31m==> amazon-ebs.ubuntu:   1000K .......... .......... .......... .......... ..........  4% 7.97M 6s[0m
-[1;31m==> amazon-ebs.ubuntu:   1050K .......... .......... .......... .......... ..........  4% 6.12M 6s[0m
-[1;31m==> amazon-ebs.ubuntu:   1100K .......... .......... .......... .......... ..........  5% 7.65M 6s[0m
-[1;31m==> amazon-ebs.ubuntu:   1150K .......... .......... .......... .......... ..........  5% 7.62M 5s[0m
-[1;31m==> amazon-ebs.ubuntu:   1200K .......... .......... .......... .......... ..........  5% 7.66M 5s[0m
-[1;31m==> amazon-ebs.ubuntu:   1250K .......... .......... .......... .......... ..........  5% 7.38M 5s[0m
-[1;31m==> amazon-ebs.ubuntu:   1300K .......... .......... .......... .......... ..........  6% 9.14M 5s[0m
-[1;31m==> amazon-ebs.ubuntu:   1350K .......... .......... .......... .......... ..........  6% 7.66M 5s[0m
-[1;31m==> amazon-ebs.ubuntu:   1400K .......... .......... .......... .......... ..........  6% 7.65M 5s[0m
-[1;31m==> amazon-ebs.ubuntu:   1450K .......... .......... .......... .......... ..........  6% 5.36M 5s[0m
-[1;31m==> amazon-ebs.ubuntu:   1500K .......... .......... .......... .......... ..........  6% 9.21M 5s[0m
-[1;31m==> amazon-ebs.ubuntu:   1550K .......... .......... .......... .......... ..........  7% 7.63M 5s[0m
-[1;31m==> amazon-ebs.ubuntu:   1600K .......... .......... .......... .......... ..........  7% 8.96M 5s[0m
-[1;31m==> amazon-ebs.ubuntu:   1650K .......... .......... .......... .......... ..........  7% 7.62M 5s[0m
-[1;31m==> amazon-ebs.ubuntu:   1700K .......... .......... .......... .......... ..........  7% 7.50M 4s[0m
-[1;31m==> amazon-ebs.ubuntu:   1750K .......... .......... .......... .......... ..........  8% 7.71M 4s[0m
-[1;31m==> amazon-ebs.ubuntu:   1800K .......... .......... .......... .......... ..........  8% 7.55M 4s[0m
-[1;31m==> amazon-ebs.ubuntu:   1850K .......... .......... .......... .......... ..........  8% 6.17M 4s[0m
-[1;31m==> amazon-ebs.ubuntu:   1900K .......... .......... .......... .......... ..........  8% 7.66M 4s[0m
-[1;31m==> amazon-ebs.ubuntu:   1950K .......... .......... .......... .......... ..........  9% 8.89M 4s[0m
-[1;31m==> amazon-ebs.ubuntu:   2000K .......... .......... .......... .......... ..........  9% 7.66M 4s[0m
-[1;31m==> amazon-ebs.ubuntu:   2050K .......... .......... .......... .......... ..........  9% 7.44M 4s[0m
-[1;31m==> amazon-ebs.ubuntu:   2100K .......... .......... .......... .......... ..........  9% 7.85M 4s[0m
-[1;31m==> amazon-ebs.ubuntu:   2150K .......... .......... .......... .......... ..........  9% 6.63M 4s[0m
-[1;31m==> amazon-ebs.ubuntu:   2200K .......... .......... .......... .......... .......... 10% 20.7M 4s[0m
-[1;31m==> amazon-ebs.ubuntu:   2250K .......... .......... .......... .......... .......... 10% 8.40M 4s[0m
-[1;31m==> amazon-ebs.ubuntu:   2300K .......... .......... .......... .......... .......... 10% 9.68M 4s[0m
-[1;31m==> amazon-ebs.ubuntu:   2350K .......... .......... .......... .......... .......... 10% 13.0M 4s[0m
-[1;31m==> amazon-ebs.ubuntu:   2400K .......... .......... .......... .......... .......... 11% 5.50M 4s[0m
-[1;31m==> amazon-ebs.ubuntu:   2450K .......... .......... .......... .......... .......... 11% 8.07M 4s[0m
-[1;31m==> amazon-ebs.ubuntu:   2500K .......... .......... .......... .......... .......... 11% 10.3M 4s[0m
-[1;31m==> amazon-ebs.ubuntu:   2550K .......... .......... .......... .......... .......... 11% 9.08M 4s[0m
-[1;31m==> amazon-ebs.ubuntu:   2600K .......... .......... .......... .......... .......... 11% 9.46M 4s[0m
-[1;31m==> amazon-ebs.ubuntu:   2650K .......... .......... .......... .......... .......... 12% 7.97M 4s[0m
-[1;31m==> amazon-ebs.ubuntu:   2700K .......... .......... .......... .......... .......... 12% 9.87M 4s[0m
-[1;31m==> amazon-ebs.ubuntu:   2750K .......... .......... .......... .......... .......... 12% 11.3M 4s[0m
-[1;31m==> amazon-ebs.ubuntu:   2800K .......... .......... .......... .......... .......... 12% 10.8M 3s[0m
-[1;31m==> amazon-ebs.ubuntu:   2850K .......... .......... .......... .......... .......... 13% 9.64M 3s[0m
-[1;31m==> amazon-ebs.ubuntu:   2900K .......... .......... .......... .......... .......... 13% 9.65M 3s[0m
-[1;31m==> amazon-ebs.ubuntu:   2950K .......... .......... .......... .......... .......... 13% 10.1M 3s[0m
-[1;31m==> amazon-ebs.ubuntu:   3000K .......... .......... .......... .......... .......... 13% 10.1M 3s[0m
-[1;31m==> amazon-ebs.ubuntu:   3050K .......... .......... .......... .......... .......... 13% 8.33M 3s[0m
-[1;31m==> amazon-ebs.ubuntu:   3100K .......... .......... .......... .......... .......... 14% 9.90M 3s[0m
-[1;31m==> amazon-ebs.ubuntu:   3150K .......... .......... .......... .......... .......... 14% 9.95M 3s[0m
-[1;31m==> amazon-ebs.ubuntu:   3200K .......... .......... .......... .......... .......... 14% 9.82M 3s[0m
-[1;31m==> amazon-ebs.ubuntu:   3250K .......... .......... .......... .......... .......... 14% 9.56M 3s[0m
-[1;31m==> amazon-ebs.ubuntu:   3300K .......... .......... .......... .......... .......... 15% 12.6M 3s[0m
-[1;31m==> amazon-ebs.ubuntu:   3350K .......... .......... .......... .......... .......... 15% 6.77M 3s[0m
-[1;31m==> amazon-ebs.ubuntu:   3400K .......... .......... .......... .......... .......... 15% 19.2M 3s[0m
-[1;31m==> amazon-ebs.ubuntu:   3450K .......... .......... .......... .......... .......... 15% 7.03M 3s[0m
-[1;31m==> amazon-ebs.ubuntu:   3500K .......... .......... .......... .......... .......... 15% 10.3M 3s[0m
-[1;31m==> amazon-ebs.ubuntu:   3550K .......... .......... .......... .......... .......... 16% 12.1M 3s[0m
-[1;31m==> amazon-ebs.ubuntu:   3600K .......... .......... .......... .......... .......... 16% 9.99M 3s[0m
-[1;31m==> amazon-ebs.ubuntu:   3650K .......... .......... .......... .......... .......... 16% 9.36M 3s[0m
-[1;31m==> amazon-ebs.ubuntu:   3700K .......... .......... .......... .......... .......... 16% 10.2M 3s[0m
-[1;31m==> amazon-ebs.ubuntu:   3750K .......... .......... .......... .......... .......... 17% 9.74M 3s[0m
-[1;31m==> amazon-ebs.ubuntu:   3800K .......... .......... .......... .......... .......... 17% 10.1M 3s[0m
-[1;31m==> amazon-ebs.ubuntu:   3850K .......... .......... .......... .......... .......... 17% 7.97M 3s[0m
-[1;31m==> amazon-ebs.ubuntu:   3900K .......... .......... .......... .......... .......... 17% 10.5M 3s[0m
-[1;31m==> amazon-ebs.ubuntu:   3950K .......... .......... .......... .......... .......... 18% 11.3M 3s[0m
-[1;31m==> amazon-ebs.ubuntu:   4000K .......... .......... .......... .......... .......... 18% 15.8M 3s[0m
-[1;31m==> amazon-ebs.ubuntu:   4050K .......... .......... .......... .......... .......... 18% 11.7M 3s[0m
-[1;31m==> amazon-ebs.ubuntu:   4100K .......... .......... .......... .......... .......... 18% 12.0M 3s[0m
-[1;31m==> amazon-ebs.ubuntu:   4150K .......... .......... .......... .......... .......... 18% 11.9M 3s[0m
-[1;31m==> amazon-ebs.ubuntu:   4200K .......... .......... .......... .......... .......... 19% 16.7M 3s[0m
-[1;31m==> amazon-ebs.ubuntu:   4250K .......... .......... .......... .......... .......... 19% 9.84M 3s[0m
-[1;31m==> amazon-ebs.ubuntu:   4300K .......... .......... .......... .......... .......... 19% 12.3M 3s[0m
-[1;31m==> amazon-ebs.ubuntu:   4350K .......... .......... .......... .......... .......... 19% 12.8M 3s[0m
-[1;31m==> amazon-ebs.ubuntu:   4400K .......... .......... .......... .......... .......... 20% 13.0M 3s[0m
-[1;31m==> amazon-ebs.ubuntu:   4450K .......... .......... .......... .......... .......... 20% 16.1M 3s[0m
-[1;31m==> amazon-ebs.ubuntu:   4500K .......... .......... .......... .......... .......... 20% 12.9M 3s[0m
-[1;31m==> amazon-ebs.ubuntu:   4550K .......... .......... .......... .......... .......... 20% 16.2M 3s[0m
-[1;31m==> amazon-ebs.ubuntu:   4600K .......... .......... .......... .......... .......... 20% 17.8M 3s[0m
-[1;31m==> amazon-ebs.ubuntu:   4650K .......... .......... .......... .......... .......... 21% 10.0M 3s[0m
-[1;31m==> amazon-ebs.ubuntu:   4700K .......... .......... .......... .......... .......... 21% 18.3M 2s[0m
-[1;31m==> amazon-ebs.ubuntu:   4750K .......... .......... .......... .......... .......... 21% 15.7M 2s[0m
-[1;31m==> amazon-ebs.ubuntu:   4800K .......... .......... .......... .......... .......... 21% 16.9M 2s[0m
-[1;31m==> amazon-ebs.ubuntu:   4850K .......... .......... .......... .......... .......... 22% 16.8M 2s[0m
-[1;31m==> amazon-ebs.ubuntu:   4900K .......... .......... .......... .......... .......... 22% 17.0M 2s[0m
-[1;31m==> amazon-ebs.ubuntu:   4950K .......... .......... .......... .......... .......... 22% 16.3M 2s[0m
-[1;31m==> amazon-ebs.ubuntu:   5000K .......... .......... .......... .......... .......... 22% 17.6M 2s[0m
-[1;31m==> amazon-ebs.ubuntu:   5050K .......... .......... .......... .......... .......... 22% 13.0M 2s[0m
-[1;31m==> amazon-ebs.ubuntu:   5100K .......... .......... .......... .......... .......... 23% 17.6M 2s[0m
-[1;31m==> amazon-ebs.ubuntu:   5150K .......... .......... .......... .......... .......... 23% 18.3M 2s[0m
-[1;31m==> amazon-ebs.ubuntu:   5200K .......... .......... .......... .......... .......... 23% 9.24M 2s[0m
-[1;31m==> amazon-ebs.ubuntu:   5250K .......... .......... .......... .......... .......... 23%  208M 2s[0m
-[1;31m==> amazon-ebs.ubuntu:   5300K .......... .......... .......... .......... .......... 24% 20.0M 2s[0m
-[1;31m==> amazon-ebs.ubuntu:   5350K .......... .......... .......... .......... .......... 24% 25.6M 2s[0m
-[1;31m==> amazon-ebs.ubuntu:   5400K .......... .......... .......... .......... .......... 24% 17.2M 2s[0m
-[1;31m==> amazon-ebs.ubuntu:   5450K .......... .......... .......... .......... .......... 24% 17.6M 2s[0m
-[1;31m==> amazon-ebs.ubuntu:   5500K .......... .......... .......... .......... .......... 24% 16.3M 2s[0m
-[1;31m==> amazon-ebs.ubuntu:   5550K .......... .......... .......... .......... .......... 25% 25.8M 2s[0m
-[1;31m==> amazon-ebs.ubuntu:   5600K .......... .......... .......... .......... .......... 25% 16.4M 2s[0m
-[1;31m==> amazon-ebs.ubuntu:   5650K .......... .......... .......... .......... .......... 25% 23.6M 2s[0m
-[1;31m==> amazon-ebs.ubuntu:   5700K .......... .......... .......... .......... .......... 25% 26.8M 2s[0m
-[1;31m==> amazon-ebs.ubuntu:   5750K .......... .......... .......... .......... .......... 26% 15.5M 2s[0m
-[1;31m==> amazon-ebs.ubuntu:   5800K .......... .......... .......... .......... .......... 26% 33.4M 2s[0m
-[1;31m==> amazon-ebs.ubuntu:   5850K .......... .......... .......... .......... .......... 26% 12.9M 2s[0m
-[1;31m==> amazon-ebs.ubuntu:   5900K .......... .......... .......... .......... .......... 26% 13.0M 2s[0m
-[1;31m==> amazon-ebs.ubuntu:   5950K .......... .......... .......... .......... .......... 27% 15.2M 2s[0m
-[1;31m==> amazon-ebs.ubuntu:   6000K .......... .......... .......... .......... .......... 27% 20.6M 2s[0m
-[1;31m==> amazon-ebs.ubuntu:   6050K .......... .......... .......... .......... .......... 27% 22.3M 2s[0m
-[1;31m==> amazon-ebs.ubuntu:   6100K .......... .......... .......... .......... .......... 27% 14.5M 2s[0m
-[1;31m==> amazon-ebs.ubuntu:   6150K .......... .......... .......... .......... .......... 27% 15.5M 2s[0m
-[1;31m==> amazon-ebs.ubuntu:   6200K .......... .......... .......... .......... .......... 28% 31.4M 2s[0m
-[1;31m==> amazon-ebs.ubuntu:   6250K .......... .......... .......... .......... .......... 28% 19.9M 2s[0m
-[1;31m==> amazon-ebs.ubuntu:   6300K .......... .......... .......... .......... .......... 28% 16.6M 2s[0m
-[1;31m==> amazon-ebs.ubuntu:   6350K .......... .......... .......... .......... .......... 28% 23.3M 2s[0m
-[1;31m==> amazon-ebs.ubuntu:   6400K .......... .......... .......... .......... .......... 29% 17.1M 2s[0m
-[1;31m==> amazon-ebs.ubuntu:   6450K .......... .......... .......... .......... .......... 29% 19.2M 2s[0m
-[1;31m==> amazon-ebs.ubuntu:   6500K .......... .......... .......... .......... .......... 29% 26.2M 2s[0m
-[1;31m==> amazon-ebs.ubuntu:   6550K .......... .......... .......... .......... .......... 29% 10.5M 2s[0m
-[1;31m==> amazon-ebs.ubuntu:   6600K .......... .......... .......... .......... .......... 29%  218M 2s[0m
-[1;31m==> amazon-ebs.ubuntu:   6650K .......... .......... .......... .......... .......... 30% 13.8M 2s[0m
-[1;31m==> amazon-ebs.ubuntu:   6700K .......... .......... .......... .......... .......... 30% 23.2M 2s[0m
-[1;31m==> amazon-ebs.ubuntu:   6750K .......... .......... .......... .......... .......... 30% 21.5M 2s[0m
-[1;31m==> amazon-ebs.ubuntu:   6800K .......... .......... .......... .......... .......... 30% 15.3M 2s[0m
-[1;31m==> amazon-ebs.ubuntu:   6850K .......... .......... .......... .......... .......... 31% 30.0M 2s[0m
-[1;31m==> amazon-ebs.ubuntu:   6900K .......... .......... .......... .......... .......... 31% 18.4M 2s[0m
-[1;31m==> amazon-ebs.ubuntu:   6950K .......... .......... .......... .......... .......... 31% 24.2M 2s[0m
-[1;31m==> amazon-ebs.ubuntu:   7000K .......... .......... .......... .......... .......... 31% 16.1M 2s[0m
-[1;31m==> amazon-ebs.ubuntu:   7050K .......... .......... .......... .......... .......... 31% 18.0M 2s[0m
-[1;31m==> amazon-ebs.ubuntu:   7100K .......... .......... .......... .......... .......... 32% 24.8M 2s[0m
-[1;31m==> amazon-ebs.ubuntu:   7150K .......... .......... .......... .......... .......... 32% 15.8M 2s[0m
-[1;31m==> amazon-ebs.ubuntu:   7200K .......... .......... .......... .......... .......... 32% 26.2M 2s[0m
-[1;31m==> amazon-ebs.ubuntu:   7250K .......... .......... .......... .......... .......... 32% 22.7M 2s[0m
-[1;31m==> amazon-ebs.ubuntu:   7300K .......... .......... .......... .......... .......... 33% 16.6M 2s[0m
-[1;31m==> amazon-ebs.ubuntu:   7350K .......... .......... .......... .......... .......... 33% 26.0M 2s[0m
-[1;31m==> amazon-ebs.ubuntu:   7400K .......... .......... .......... .......... .......... 33% 16.6M 2s[0m
-[1;31m==> amazon-ebs.ubuntu:   7450K .......... .......... .......... .......... .......... 33% 17.1M 2s[0m
-[1;31m==> amazon-ebs.ubuntu:   7500K .......... .......... .......... .......... .......... 33% 23.1M 2s[0m
-[1;31m==> amazon-ebs.ubuntu:   7550K .......... .......... .......... .......... .......... 34% 17.4M 2s[0m
-[1;31m==> amazon-ebs.ubuntu:   7600K .......... .......... .......... .......... .......... 34% 25.0M 2s[0m
-[1;31m==> amazon-ebs.ubuntu:   7650K .......... .......... .......... .......... .......... 34% 15.4M 2s[0m
-[1;31m==> amazon-ebs.ubuntu:   7700K .......... .......... .......... .......... .......... 34% 25.3M 2s[0m
-[1;31m==> amazon-ebs.ubuntu:   7750K .......... .......... .......... .......... .......... 35% 17.2M 2s[0m
-[1;31m==> amazon-ebs.ubuntu:   7800K .......... .......... .......... .......... .......... 35% 23.6M 2s[0m
-[1;31m==> amazon-ebs.ubuntu:   7850K .......... .......... .......... .......... .......... 35% 17.8M 2s[0m
-[1;31m==> amazon-ebs.ubuntu:   7900K .......... .......... .......... .......... .......... 35% 16.5M 2s[0m
-[1;31m==> amazon-ebs.ubuntu:   7950K .......... .......... .......... .......... .......... 36% 23.4M 2s[0m
-[1;31m==> amazon-ebs.ubuntu:   8000K .......... .......... .......... .......... .......... 36% 22.8M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:   8050K .......... .......... .......... .......... .......... 36% 17.3M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:   8100K .......... .......... .......... .......... .......... 36% 25.3M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:   8150K .......... .......... .......... .......... .......... 36% 16.5M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:   8200K .......... .......... .......... .......... .......... 37% 23.0M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:   8250K .......... .......... .......... .......... .......... 37% 16.5M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:   8300K .......... .......... .......... .......... .......... 37% 17.8M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:   8350K .......... .......... .......... .......... .......... 37% 26.3M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:   8400K .......... .......... .......... .......... .......... 38% 16.2M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:   8450K .......... .......... .......... .......... .......... 38% 21.2M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:   8500K .......... .......... .......... .......... .......... 38% 17.3M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:   8550K .......... .......... .......... .......... .......... 38% 26.5M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:   8600K .......... .......... .......... .......... .......... 38% 23.5M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:   8650K .......... .......... .......... .......... .......... 39% 13.4M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:   8700K .......... .......... .......... .......... .......... 39% 24.5M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:   8750K .......... .......... .......... .......... .......... 39% 16.5M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:   8800K .......... .......... .......... .......... .......... 39% 23.1M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:   8850K .......... .......... .......... .......... .......... 40% 24.6M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:   8900K .......... .......... .......... .......... .......... 40% 17.2M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:   8950K .......... .......... .......... .......... .......... 40% 22.9M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:   9000K .......... .......... .......... .......... .......... 40% 18.5M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:   9050K .......... .......... .......... .......... .......... 40% 24.9M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:   9100K .......... .......... .......... .......... .......... 41% 24.2M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:   9150K .......... .......... .......... .......... .......... 41% 26.6M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:   9200K .......... .......... .......... .......... .......... 41% 24.4M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:   9250K .......... .......... .......... .......... .......... 41% 21.7M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:   9300K .......... .......... .......... .......... .......... 42% 23.0M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:   9350K .......... .......... .......... .......... .......... 42% 27.6M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:   9400K .......... .......... .......... .......... .......... 42% 22.5M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:   9450K .......... .......... .......... .......... .......... 42% 26.8M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:   9500K .......... .......... .......... .......... .......... 42% 25.4M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:   9550K .......... .......... .......... .......... .......... 43% 23.0M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:   9600K .......... .......... .......... .......... .......... 43% 25.0M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:   9650K .......... .......... .......... .......... .......... 43% 22.0M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:   9700K .......... .......... .......... .......... .......... 43% 25.4M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:   9750K .......... .......... .......... .......... .......... 44% 40.5M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:   9800K .......... .......... .......... .......... .......... 44% 21.5M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:   9850K .......... .......... .......... .......... .......... 44% 25.5M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:   9900K .......... .......... .......... .......... .......... 44% 26.5M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:   9950K .......... .......... .......... .......... .......... 45% 27.2M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:  10000K .......... .......... .......... .......... .......... 45% 25.3M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:  10050K .......... .......... .......... .......... .......... 45% 36.7M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:  10100K .......... .......... .......... .......... .......... 45% 25.5M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:  10150K .......... .......... .......... .......... .......... 45% 28.3M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:  10200K .......... .......... .......... .......... .......... 46% 28.5M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:  10250K .......... .......... .......... .......... .......... 46% 24.0M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:  10300K .......... .......... .......... .......... .......... 46% 34.8M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:  10350K .......... .......... .......... .......... .......... 46% 29.2M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:  10400K .......... .......... .......... .......... .......... 47% 37.9M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:  10450K .......... .......... .......... .......... .......... 47% 28.0M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:  10500K .......... .......... .......... .......... .......... 47% 37.8M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:  10550K .......... .......... .......... .......... .......... 47% 26.7M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:  10600K .......... .......... .......... .......... .......... 47% 42.0M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:  10650K .......... .......... .......... .......... .......... 48% 24.7M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:  10700K .......... .......... .......... .......... .......... 48% 29.4M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:  10750K .......... .......... .......... .......... .......... 48% 37.2M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:  10800K .......... .......... .......... .......... .......... 48% 29.4M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:  10850K .......... .......... .......... .......... .......... 49% 35.8M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:  10900K .......... .......... .......... .......... .......... 49% 27.5M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:  10950K .......... .......... .......... .......... .......... 49% 42.8M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:  11000K .......... .......... .......... .......... .......... 49% 26.7M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:  11050K .......... .......... .......... .......... .......... 49% 27.4M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:  11100K .......... .......... .......... .......... .......... 50% 37.9M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:  11150K .......... .......... .......... .......... .......... 50% 29.4M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:  11200K .......... .......... .......... .......... .......... 50% 46.6M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:  11250K .......... .......... .......... .......... .......... 50% 28.4M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:  11300K .......... .......... .......... .......... .......... 51% 36.6M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:  11350K .......... .......... .......... .......... .......... 51% 51.7M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:  11400K .......... .......... .......... .......... .......... 51% 28.5M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:  11450K .......... .......... .......... .......... .......... 51% 30.5M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:  11500K .......... .......... .......... .......... .......... 51% 43.8M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:  11550K .......... .......... .......... .......... .......... 52% 44.0M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:  11600K .......... .......... .......... .......... .......... 52% 32.6M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:  11650K .......... .......... .......... .......... .......... 52% 40.4M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:  11700K .......... .......... .......... .......... .......... 52% 30.4M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:  11750K .......... .......... .......... .......... .......... 53% 41.2M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:  11800K .......... .......... .......... .......... .......... 53% 31.0M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:  11850K .......... .......... .......... .......... .......... 53% 43.2M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:  11900K .......... .......... .......... .......... .......... 53% 50.2M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:  11950K .......... .......... .......... .......... .......... 54% 32.4M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:  12000K .......... .......... .......... .......... .......... 54% 44.4M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:  12050K .......... .......... .......... .......... .......... 54% 48.0M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:  12100K .......... .......... .......... .......... .......... 54% 35.2M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:  12150K .......... .......... .......... .......... .......... 54% 36.5M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:  12200K .......... .......... .......... .......... .......... 55% 53.6M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:  12250K .......... .......... .......... .......... .......... 55% 36.0M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:  12300K .......... .......... .......... .......... .......... 55% 31.4M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:  12350K .......... .......... .......... .......... .......... 55% 50.2M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:  12400K .......... .......... .......... .......... .......... 56% 50.4M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:  12450K .......... .......... .......... .......... .......... 56% 39.5M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:  12500K .......... .......... .......... .......... .......... 56% 31.3M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:  12550K .......... .......... .......... .......... .......... 56% 58.1M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:  12600K .......... .......... .......... .......... .......... 56% 38.8M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:  12650K .......... .......... .......... .......... .......... 57% 31.8M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:  12700K .......... .......... .......... .......... .......... 57% 38.8M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:  12750K .......... .......... .......... .......... .......... 57% 43.5M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:  12800K .......... .......... .......... .......... .......... 57% 57.0M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:  12850K .......... .......... .......... .......... .......... 58% 46.6M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:  12900K .......... .......... .......... .......... .......... 58% 40.3M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:  12950K .......... .......... .......... .......... .......... 58% 36.0M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:  13000K .......... .......... .......... .......... .......... 58% 66.1M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:  13050K .......... .......... .......... .......... .......... 58% 31.8M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:  13100K .......... .......... .......... .......... .......... 59% 67.0M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:  13150K .......... .......... .......... .......... .......... 59%  236M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:  13200K .......... .......... .......... .......... .......... 59% 43.1M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:  13250K .......... .......... .......... .......... .......... 59% 47.6M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:  13300K .......... .......... .......... .......... .......... 60% 63.6M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:  13350K .......... .......... .......... .......... .......... 60% 38.8M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:  13400K .......... .......... .......... .......... .......... 60%  193M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:  13450K .......... .......... .......... .......... .......... 60% 36.0M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:  13500K .......... .......... .......... .......... .......... 60% 27.1M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:  13550K .......... .......... .......... .......... .......... 61% 30.6M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:  13600K .......... .......... .......... .......... .......... 61% 25.4M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:  13650K .......... .......... .......... .......... .......... 61% 41.7M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:  13700K .......... .......... .......... .......... .......... 61% 24.4M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:  13750K .......... .......... .......... .......... .......... 62% 42.2M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:  13800K .......... .......... .......... .......... .......... 62% 26.4M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:  13850K .......... .......... .......... .......... .......... 62% 30.3M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:  13900K .......... .......... .......... .......... .......... 62% 37.5M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:  13950K .......... .......... .......... .......... .......... 63% 52.0M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:  14000K .......... .......... .......... .......... .......... 63% 35.7M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:  14050K .......... .......... .......... .......... .......... 63% 42.1M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:  14100K .......... .......... .......... .......... .......... 63% 39.7M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:  14150K .......... .......... .......... .......... .......... 63% 39.7M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:  14200K .......... .......... .......... .......... .......... 64% 41.4M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:  14250K .......... .......... .......... .......... .......... 64% 37.6M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:  14300K .......... .......... .......... .......... .......... 64% 53.2M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:  14350K .......... .......... .......... .......... .......... 64% 47.2M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:  14400K .......... .......... .......... .......... .......... 65% 51.4M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:  14450K .......... .......... .......... .......... .......... 65% 39.0M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:  14500K .......... .......... .......... .......... .......... 65% 39.7M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:  14550K .......... .......... .......... .......... .......... 65% 47.0M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:  14600K .......... .......... .......... .......... .......... 65% 42.5M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:  14650K .......... .......... .......... .......... .......... 66%  116M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:  14700K .......... .......... .......... .......... .......... 66% 56.2M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:  14750K .......... .......... .......... .......... .......... 66%  272M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:  14800K .......... .......... .......... .......... .......... 66% 5.35M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:  14850K .......... .......... .......... .......... .......... 67%  218M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:  14900K .......... .......... .......... .......... .......... 67%  169M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:  14950K .......... .......... .......... .......... .......... 67%  211M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:  15000K .......... .......... .......... .......... .......... 67%  267M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:  15050K .......... .......... .......... .......... .......... 67%  220M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:  15100K .......... .......... .......... .......... .......... 68%  152M 1s[0m
-[1;31m==> amazon-ebs.ubuntu:  15150K .......... .......... .......... .......... .......... 68% 27.3M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  15200K .......... .......... .......... .......... .......... 68% 33.5M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  15250K .......... .......... .......... .......... .......... 68%  221M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  15300K .......... .......... .......... .......... .......... 69%  224M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  15350K .......... .......... .......... .......... .......... 69%  166M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  15400K .......... .......... .......... .......... .......... 69%  272M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  15450K .......... .......... .......... .......... .......... 69%  198M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  15500K .......... .......... .......... .......... .......... 69%  260M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  15550K .......... .......... .......... .......... .......... 70%  146M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  15600K .......... .......... .......... .......... .......... 70%  271M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  15650K .......... .......... .......... .......... .......... 70% 31.7M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  15700K .......... .......... .......... .......... .......... 70% 23.2M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  15750K .......... .......... .......... .......... .......... 71% 40.5M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  15800K .......... .......... .......... .......... .......... 71% 52.1M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  15850K .......... .......... .......... .......... .......... 71%  150M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  15900K .......... .......... .......... .......... .......... 71%  177M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  15950K .......... .......... .......... .......... .......... 72% 98.2M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  16000K .......... .......... .......... .......... .......... 72% 27.6M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  16050K .......... .......... .......... .......... .......... 72%  187M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  16100K .......... .......... .......... .......... .......... 72% 6.72M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  16150K .......... .......... .......... .......... .......... 72%  181M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  16200K .......... .......... .......... .......... .......... 73% 53.1M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  16250K .......... .......... .......... .......... .......... 73% 30.3M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  16300K .......... .......... .......... .......... .......... 73% 52.5M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  16350K .......... .......... .......... .......... .......... 73% 46.2M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  16400K .......... .......... .......... .......... .......... 74% 71.1M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  16450K .......... .......... .......... .......... .......... 74% 18.7M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  16500K .......... .......... .......... .......... .......... 74%  206M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  16550K .......... .......... .......... .......... .......... 74%  177M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  16600K .......... .......... .......... .......... .......... 74% 49.1M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  16650K .......... .......... .......... .......... .......... 75% 25.0M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  16700K .......... .......... .......... .......... .......... 75%  256M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  16750K .......... .......... .......... .......... .......... 75% 54.9M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  16800K .......... .......... .......... .......... .......... 75% 78.6M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  16850K .......... .......... .......... .......... .......... 76% 45.4M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  16900K .......... .......... .......... .......... .......... 76%  164M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  16950K .......... .......... .......... .......... .......... 76% 32.3M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  17000K .......... .......... .......... .......... .......... 76%  108M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  17050K .......... .......... .......... .......... .......... 76% 25.7M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  17100K .......... .......... .......... .......... .......... 77%  156M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  17150K .......... .......... .......... .......... .......... 77% 38.7M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  17200K .......... .......... .......... .......... .......... 77% 74.0M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  17250K .......... .......... .......... .......... .......... 77% 53.4M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  17300K .......... .......... .......... .......... .......... 78%  147M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  17350K .......... .......... .......... .......... .......... 78% 13.9M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  17400K .......... .......... .......... .......... .......... 78% 44.4M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  17450K .......... .......... .......... .......... .......... 78% 42.9M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  17500K .......... .......... .......... .......... .......... 78% 75.4M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  17550K .......... .......... .......... .......... .......... 79% 42.2M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  17600K .......... .......... .......... .......... .......... 79% 90.8M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  17650K .......... .......... .......... .......... .......... 79% 37.7M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  17700K .......... .......... .......... .......... .......... 79%  221M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  17750K .......... .......... .......... .......... .......... 80% 38.7M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  17800K .......... .......... .......... .......... .......... 80% 60.2M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  17850K .......... .......... .......... .......... .......... 80% 37.4M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  17900K .......... .......... .......... .......... .......... 80% 83.1M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  17950K .......... .......... .......... .......... .......... 81% 38.7M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  18000K .......... .......... .......... .......... .......... 81% 64.5M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  18050K .......... .......... .......... .......... .......... 81% 44.4M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  18100K .......... .......... .......... .......... .......... 81% 46.7M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  18150K .......... .......... .......... .......... .......... 81% 53.0M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  18200K .......... .......... .......... .......... .......... 82%  147M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  18250K .......... .......... .......... .......... .......... 82% 37.6M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  18300K .......... .......... .......... .......... .......... 82% 83.5M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  18350K .......... .......... .......... .......... .......... 82% 41.5M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  18400K .......... .......... .......... .......... .......... 83% 10.6M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  18450K .......... .......... .......... .......... .......... 83%  203M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  18500K .......... .......... .......... .......... .......... 83% 9.65M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  18550K .......... .......... .......... .......... .......... 83%  185M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  18600K .......... .......... .......... .......... .......... 83%  154M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  18650K .......... .......... .......... .......... .......... 84% 40.4M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  18700K .......... .......... .......... .......... .......... 84% 81.0M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  18750K .......... .......... .......... .......... .......... 84%  154M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  18800K .......... .......... .......... .......... .......... 84%  259M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  18850K .......... .......... .......... .......... .......... 85%  240M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  18900K .......... .......... .......... .......... .......... 85% 67.4M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  18950K .......... .......... .......... .......... .......... 85% 23.4M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  19000K .......... .......... .......... .......... .......... 85%  207M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  19050K .......... .......... .......... .......... .......... 85%  168M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  19100K .......... .......... .......... .......... .......... 86%  189M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  19150K .......... .......... .......... .......... .......... 86%  255M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  19200K .......... .......... .......... .......... .......... 86%  263M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  19250K .......... .......... .......... .......... .......... 86%  243M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  19300K .......... .......... .......... .......... .......... 87% 27.4M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  19350K .......... .......... .......... .......... .......... 87% 30.4M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  19400K .......... .......... .......... .......... .......... 87%  143M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  19450K .......... .......... .......... .......... .......... 87%  220M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  19500K .......... .......... .......... .......... .......... 87% 55.5M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  19550K .......... .......... .......... .......... .......... 88% 48.6M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  19600K .......... .......... .......... .......... .......... 88%  277M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  19650K .......... .......... .......... .......... .......... 88%  133M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  19700K .......... .......... .......... .......... .......... 88%  209M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  19750K .......... .......... .......... .......... .......... 89%  176M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  19800K .......... .......... .......... .......... .......... 89%  276M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  19850K .......... .......... .......... .......... .......... 89% 20.8M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  19900K .......... .......... .......... .......... .......... 89% 19.2M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  19950K .......... .......... .......... .......... .......... 90% 82.0M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  20000K .......... .......... .......... .......... .......... 90%  201M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  20050K .......... .......... .......... .......... .......... 90% 13.6M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  20100K .......... .......... .......... .......... .......... 90%  159M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  20150K .......... .......... .......... .......... .......... 90%  196M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  20200K .......... .......... .......... .......... .......... 91% 23.0M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  20250K .......... .......... .......... .......... .......... 91%  146M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  20300K .......... .......... .......... .......... .......... 91% 37.4M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  20350K .......... .......... .......... .......... .......... 91%  125M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  20400K .......... .......... .......... .......... .......... 92% 37.3M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  20450K .......... .......... .......... .......... .......... 92% 46.8M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  20500K .......... .......... .......... .......... .......... 92%  127M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  20550K .......... .......... .......... .......... .......... 92% 51.4M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  20600K .......... .......... .......... .......... .......... 92% 57.9M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  20650K .......... .......... .......... .......... .......... 93% 66.2M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  20700K .......... .......... .......... .......... .......... 93% 39.4M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  20750K .......... .......... .......... .......... .......... 93% 59.8M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  20800K .......... .......... .......... .......... .......... 93% 63.7M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  20850K .......... .......... .......... .......... .......... 94% 43.4M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  20900K .......... .......... .......... .......... .......... 94% 53.4M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  20950K .......... .......... .......... .......... .......... 94%  100M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  21000K .......... .......... .......... .......... .......... 94% 54.0M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  21050K .......... .......... .......... .......... .......... 94% 46.1M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  21100K .......... .......... .......... .......... .......... 95% 65.9M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  21150K .......... .......... .......... .......... .......... 95% 57.9M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  21200K .......... .......... .......... .......... .......... 95% 41.0M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  21250K .......... .......... .......... .......... .......... 95% 52.8M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  21300K .......... .......... .......... .......... .......... 96% 55.4M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  21350K .......... .......... .......... .......... .......... 96% 59.7M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  21400K .......... .......... .......... .......... .......... 96% 48.0M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  21450K .......... .......... .......... .......... .......... 96% 57.8M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  21500K .......... .......... .......... .......... .......... 96%  117M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  21550K .......... .......... .......... .......... .......... 97% 64.8M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  21600K .......... .......... .......... .......... .......... 97%  152M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  21650K .......... .......... .......... .......... .......... 97% 72.6M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  21700K .......... .......... .......... .......... .......... 97% 30.7M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  21750K .......... .......... .......... .......... .......... 98%  235M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  21800K .......... .......... .......... .......... .......... 98%  278M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  21850K .......... .......... .......... .......... .......... 98% 33.9M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  21900K .......... .......... .......... .......... .......... 98% 94.3M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  21950K .......... .......... .......... .......... .......... 99% 78.3M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  22000K .......... .......... .......... .......... .......... 99%  224M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  22050K .......... .......... .......... .......... .......... 99% 42.0M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  22100K .......... .......... .......... .......... .......... 99% 30.9M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  22150K .......... .......... .......... .......... .......... 99% 59.1M 0s[0m
-[1;31m==> amazon-ebs.ubuntu:  22200K .......... .......                                    100% 56.1M=1.2s[0m
+[1;31m==> amazon-ebs.ubuntu:      0K .......... .......... .......... .......... ..........  0% 1.23M 18s[0m
+[1;31m==> amazon-ebs.ubuntu:     50K .......... .......... .......... .......... ..........  0% 1.56M 16s[0m
+[1;31m==> amazon-ebs.ubuntu:    100K .......... .......... .......... .......... ..........  0% 2.19M 14s[0m
+[1;31m==> amazon-ebs.ubuntu:    150K .......... .......... .......... .......... ..........  0% 1.98M 13s[0m
+[1;31m==> amazon-ebs.ubuntu:    200K .......... .......... .......... .......... ..........  1% 3.38M 12s[0m
+[1;31m==> amazon-ebs.ubuntu:    250K .......... .......... .......... .......... ..........  1% 5.34M 10s[0m
+[1;31m==> amazon-ebs.ubuntu:    300K .......... .......... .......... .......... ..........  1% 4.45M 10s[0m
+[1;31m==> amazon-ebs.ubuntu:    350K .......... .......... .......... .......... ..........  1% 7.49M 9s[0m
+[1;31m==> amazon-ebs.ubuntu:    400K .......... .......... .......... .......... ..........  2% 9.72M 8s[0m
+[1;31m==> amazon-ebs.ubuntu:    450K .......... .......... .......... .......... ..........  2% 13.7M 7s[0m
+[1;31m==> amazon-ebs.ubuntu:    500K .......... .......... .......... .......... ..........  2% 14.8M 7s[0m
+[1;31m==> amazon-ebs.ubuntu:    550K .......... .......... .......... .......... ..........  2% 13.4M 6s[0m
+[1;31m==> amazon-ebs.ubuntu:    600K .......... .......... .......... .......... ..........  2% 8.01M 6s[0m
+[1;31m==> amazon-ebs.ubuntu:    650K .......... .......... .......... .......... ..........  3% 12.9M 6s[0m
+[1;31m==> amazon-ebs.ubuntu:    700K .......... .......... .......... .......... ..........  3% 18.5M 5s[0m
+[1;31m==> amazon-ebs.ubuntu:    750K .......... .......... .......... .......... ..........  3% 16.7M 5s[0m
+[1;31m==> amazon-ebs.ubuntu:    800K .......... .......... .......... .......... ..........  3% 25.7M 5s[0m
+[1;31m==> amazon-ebs.ubuntu:    850K .......... .......... .......... .......... ..........  4% 17.1M 5s[0m
+[1;31m==> amazon-ebs.ubuntu:    900K .......... .......... .......... .......... ..........  4% 26.8M 4s[0m
+[1;31m==> amazon-ebs.ubuntu:    950K .......... .......... .......... .......... ..........  4% 27.2M 4s[0m
+[1;31m==> amazon-ebs.ubuntu:   1000K .......... .......... .......... .......... ..........  4% 27.9M 4s[0m
+[1;31m==> amazon-ebs.ubuntu:   1050K .......... .......... .......... .......... ..........  4% 22.5M 4s[0m
+[1;31m==> amazon-ebs.ubuntu:   1100K .......... .......... .......... .......... ..........  5% 26.3M 4s[0m
+[1;31m==> amazon-ebs.ubuntu:   1150K .......... .......... .......... .......... ..........  5% 36.9M 4s[0m
+[1;31m==> amazon-ebs.ubuntu:   1200K .......... .......... .......... .......... ..........  5% 29.9M 3s[0m
+[1;31m==> amazon-ebs.ubuntu:   1250K .......... .......... .......... .......... ..........  5% 29.2M 3s[0m
+[1;31m==> amazon-ebs.ubuntu:   1300K .......... .......... .......... .......... ..........  6% 37.3M 3s[0m
+[1;31m==> amazon-ebs.ubuntu:   1350K .......... .......... .......... .......... ..........  6% 31.0M 3s[0m
+[1;31m==> amazon-ebs.ubuntu:   1400K .......... .......... .......... .......... ..........  6% 34.2M 3s[0m
+[1;31m==> amazon-ebs.ubuntu:   1450K .......... .......... .......... .......... ..........  6% 36.8M 3s[0m
+[1;31m==> amazon-ebs.ubuntu:   1500K .......... .......... .......... .......... ..........  6% 43.0M 3s[0m
+[1;31m==> amazon-ebs.ubuntu:   1550K .......... .......... .......... .......... ..........  7% 45.3M 3s[0m
+[1;31m==> amazon-ebs.ubuntu:   1600K .......... .......... .......... .......... ..........  7% 30.2M 3s[0m
+[1;31m==> amazon-ebs.ubuntu:   1650K .......... .......... .......... .......... ..........  7% 69.8M 3s[0m
+[1;31m==> amazon-ebs.ubuntu:   1700K .......... .......... .......... .......... ..........  7% 43.4M 3s[0m
+[1;31m==> amazon-ebs.ubuntu:   1750K .......... .......... .......... .......... ..........  8% 33.8M 3s[0m
+[1;31m==> amazon-ebs.ubuntu:   1800K .......... .......... .......... .......... ..........  8% 45.3M 2s[0m
+[1;31m==> amazon-ebs.ubuntu:   1850K .......... .......... .......... .......... ..........  8% 38.0M 2s[0m
+[1;31m==> amazon-ebs.ubuntu:   1900K .......... .......... .......... .......... ..........  8% 61.5M 2s[0m
+[1;31m==> amazon-ebs.ubuntu:   1950K .......... .......... .......... .......... ..........  9% 47.8M 2s[0m
+[1;31m==> amazon-ebs.ubuntu:   2000K .......... .......... .......... .......... ..........  9% 46.3M 2s[0m
+[1;31m==> amazon-ebs.ubuntu:   2050K .......... .......... .......... .......... ..........  9%  132M 2s[0m
+[1;31m==> amazon-ebs.ubuntu:   2100K .......... .......... .......... .......... ..........  9% 36.6M 2s[0m
+[1;31m==> amazon-ebs.ubuntu:   2150K .......... .......... .......... .......... ..........  9% 78.3M 2s[0m
+[1;31m==> amazon-ebs.ubuntu:   2200K .......... .......... .......... .......... .......... 10% 40.0M 2s[0m
+[1;31m==> amazon-ebs.ubuntu:   2250K .......... .......... .......... .......... .......... 10% 40.4M 2s[0m
+[1;31m==> amazon-ebs.ubuntu:   2300K .......... .......... .......... .......... .......... 10%  144M 2s[0m
+[1;31m==> amazon-ebs.ubuntu:   2350K .......... .......... .......... .......... .......... 10% 49.2M 2s[0m
+[1;31m==> amazon-ebs.ubuntu:   2400K .......... .......... .......... .......... .......... 11%  107M 2s[0m
+[1;31m==> amazon-ebs.ubuntu:   2450K .......... .......... .......... .......... .......... 11% 41.6M 2s[0m
+[1;31m==> amazon-ebs.ubuntu:   2500K .......... .......... .......... .......... .......... 11%  272M 2s[0m
+[1;31m==> amazon-ebs.ubuntu:   2550K .......... .......... .......... .......... .......... 11% 42.3M 2s[0m
+[1;31m==> amazon-ebs.ubuntu:   2600K .......... .......... .......... .......... .......... 11%  155M 2s[0m
+[1;31m==> amazon-ebs.ubuntu:   2650K .......... .......... .......... .......... .......... 12% 41.0M 2s[0m
+[1;31m==> amazon-ebs.ubuntu:   2700K .......... .......... .......... .......... .......... 12% 54.4M 2s[0m
+[1;31m==> amazon-ebs.ubuntu:   2750K .......... .......... .......... .......... .......... 12%  219M 2s[0m
+[1;31m==> amazon-ebs.ubuntu:   2800K .......... .......... .......... .......... .......... 12% 60.6M 2s[0m
+[1;31m==> amazon-ebs.ubuntu:   2850K .......... .......... .......... .......... .......... 13% 81.1M 2s[0m
+[1;31m==> amazon-ebs.ubuntu:   2900K .......... .......... .......... .......... .......... 13%  251M 2s[0m
+[1;31m==> amazon-ebs.ubuntu:   2950K .......... .......... .......... .......... .......... 13% 38.5M 2s[0m
+[1;31m==> amazon-ebs.ubuntu:   3000K .......... .......... .......... .......... .......... 13%  240M 2s[0m
+[1;31m==> amazon-ebs.ubuntu:   3050K .......... .......... .......... .......... .......... 13% 59.3M 1s[0m
+[1;31m==> amazon-ebs.ubuntu:   3100K .......... .......... .......... .......... .......... 14% 54.4M 1s[0m
+[1;31m==> amazon-ebs.ubuntu:   3150K .......... .......... .......... .......... .......... 14% 38.6M 1s[0m
+[1;31m==> amazon-ebs.ubuntu:   3200K .......... .......... .......... .......... .......... 14% 56.1M 1s[0m
+[1;31m==> amazon-ebs.ubuntu:   3250K .......... .......... .......... .......... .......... 14% 29.9M 1s[0m
+[1;31m==> amazon-ebs.ubuntu:   3300K .......... .......... .......... .......... .......... 15%  140M 1s[0m
+[1;31m==> amazon-ebs.ubuntu:   3350K .......... .......... .......... .......... .......... 15% 36.6M 1s[0m
+[1;31m==> amazon-ebs.ubuntu:   3400K .......... .......... .......... .......... .......... 15%  258M 1s[0m
+[1;31m==> amazon-ebs.ubuntu:   3450K .......... .......... .......... .......... .......... 15% 24.6M 1s[0m
+[1;31m==> amazon-ebs.ubuntu:   3500K .......... .......... .......... .......... .......... 15% 64.3M 1s[0m
+[1;31m==> amazon-ebs.ubuntu:   3550K .......... .......... .......... .......... .......... 16% 78.5M 1s[0m
+[1;31m==> amazon-ebs.ubuntu:   3600K .......... .......... .......... .......... .......... 16%  121M 1s[0m
+[1;31m==> amazon-ebs.ubuntu:   3650K .......... .......... .......... .......... .......... 16% 35.8M 1s[0m
+[1;31m==> amazon-ebs.ubuntu:   3700K .......... .......... .......... .......... .......... 16% 29.5M 1s[0m
+[1;31m==> amazon-ebs.ubuntu:   3750K .......... .......... .......... .......... .......... 17%  140M 1s[0m
+[1;31m==> amazon-ebs.ubuntu:   3800K .......... .......... .......... .......... .......... 17% 53.6M 1s[0m
+[1;31m==> amazon-ebs.ubuntu:   3850K .......... .......... .......... .......... .......... 17% 42.9M 1s[0m
+[1;31m==> amazon-ebs.ubuntu:   3900K .......... .......... .......... .......... .......... 17%  269M 1s[0m
+[1;31m==> amazon-ebs.ubuntu:   3950K .......... .......... .......... .......... .......... 18% 64.5M 1s[0m
+[1;31m==> amazon-ebs.ubuntu:   4000K .......... .......... .......... .......... .......... 18% 40.1M 1s[0m
+[1;31m==> amazon-ebs.ubuntu:   4050K .......... .......... .......... .......... .......... 18%  234M 1s[0m
+[1;31m==> amazon-ebs.ubuntu:   4100K .......... .......... .......... .......... .......... 18%  217M 1s[0m
+[1;31m==> amazon-ebs.ubuntu:   4150K .......... .......... .......... .......... .......... 18% 38.3M 1s[0m
+[1;31m==> amazon-ebs.ubuntu:   4200K .......... .......... .......... .......... .......... 19%  248M 1s[0m
+[1;31m==> amazon-ebs.ubuntu:   4250K .......... .......... .......... .......... .......... 19% 41.2M 1s[0m
+[1;31m==> amazon-ebs.ubuntu:   4300K .......... .......... .......... .......... .......... 19% 90.7M 1s[0m
+[1;31m==> amazon-ebs.ubuntu:   4350K .......... .......... .......... .......... .......... 19% 71.1M 1s[0m
+[1;31m==> amazon-ebs.ubuntu:   4400K .......... .......... .......... .......... .......... 20% 81.6M 1s[0m
+[1;31m==> amazon-ebs.ubuntu:   4450K .......... .......... .......... .......... .......... 20% 51.6M 1s[0m
+[1;31m==> amazon-ebs.ubuntu:   4500K .......... .......... .......... .......... .......... 20%  256M 1s[0m
+[1;31m==> amazon-ebs.ubuntu:   4550K .......... .......... .......... .......... .......... 20%  264M 1s[0m
+[1;31m==> amazon-ebs.ubuntu:   4600K .......... .......... .......... .......... .......... 20% 20.3M 1s[0m
+[1;31m==> amazon-ebs.ubuntu:   4650K .......... .......... .......... .......... .......... 21% 85.5M 1s[0m
+[1;31m==> amazon-ebs.ubuntu:   4700K .......... .......... .......... .......... .......... 21%  134M 1s[0m
+[1;31m==> amazon-ebs.ubuntu:   4750K .......... .......... .......... .......... .......... 21%  264M 1s[0m
+[1;31m==> amazon-ebs.ubuntu:   4800K .......... .......... .......... .......... .......... 21% 23.9M 1s[0m
+[1;31m==> amazon-ebs.ubuntu:   4850K .......... .......... .......... .......... .......... 22% 38.0M 1s[0m
+[1;31m==> amazon-ebs.ubuntu:   4900K .......... .......... .......... .......... .......... 22%  157M 1s[0m
+[1;31m==> amazon-ebs.ubuntu:   4950K .......... .......... .......... .......... .......... 22% 28.1M 1s[0m
+[1;31m==> amazon-ebs.ubuntu:   5000K .......... .......... .......... .......... .......... 22% 51.1M 1s[0m
+[1;31m==> amazon-ebs.ubuntu:   5050K .......... .......... .......... .......... .......... 22%  224M 1s[0m
+[1;31m==> amazon-ebs.ubuntu:   5100K .......... .......... .......... .......... .......... 23% 30.0M 1s[0m
+[1;31m==> amazon-ebs.ubuntu:   5150K .......... .......... .......... .......... .......... 23% 54.1M 1s[0m
+[1;31m==> amazon-ebs.ubuntu:   5200K .......... .......... .......... .......... .......... 23%  265M 1s[0m
+[1;31m==> amazon-ebs.ubuntu:   5250K .......... .......... .......... .......... .......... 23% 26.9M 1s[0m
+[1;31m==> amazon-ebs.ubuntu:   5300K .......... .......... .......... .......... .......... 24% 55.5M 1s[0m
+[1;31m==> amazon-ebs.ubuntu:   5350K .......... .......... .......... .......... .......... 24%  258M 1s[0m
+[1;31m==> amazon-ebs.ubuntu:   5400K .......... .......... .......... .......... .......... 24%  150M 1s[0m
+[1;31m==> amazon-ebs.ubuntu:   5450K .......... .......... .......... .......... .......... 24% 20.6M 1s[0m
+[1;31m==> amazon-ebs.ubuntu:   5500K .......... .......... .......... .......... .......... 24%  105M 1s[0m
+[1;31m==> amazon-ebs.ubuntu:   5550K .......... .......... .......... .......... .......... 25%  266M 1s[0m
+[1;31m==> amazon-ebs.ubuntu:   5600K .......... .......... .......... .......... .......... 25%  130M 1s[0m
+[1;31m==> amazon-ebs.ubuntu:   5650K .......... .......... .......... .......... .......... 25%  226M 1s[0m
+[1;31m==> amazon-ebs.ubuntu:   5700K .......... .......... .......... .......... .......... 25%  272M 1s[0m
+[1;31m==> amazon-ebs.ubuntu:   5750K .......... .......... .......... .......... .......... 26% 31.4M 1s[0m
+[1;31m==> amazon-ebs.ubuntu:   5800K .......... .......... .......... .......... .......... 26% 32.1M 1s[0m
+[1;31m==> amazon-ebs.ubuntu:   5850K .......... .......... .......... .......... .......... 26%  168M 1s[0m
+[1;31m==> amazon-ebs.ubuntu:   5900K .......... .......... .......... .......... .......... 26%  274M 1s[0m
+[1;31m==> amazon-ebs.ubuntu:   5950K .......... .......... .......... .......... .......... 27% 57.7M 1s[0m
+[1;31m==> amazon-ebs.ubuntu:   6000K .......... .......... .......... .......... .......... 27% 67.0M 1s[0m
+[1;31m==> amazon-ebs.ubuntu:   6050K .......... .......... .......... .......... .......... 27%  221M 1s[0m
+[1;31m==> amazon-ebs.ubuntu:   6100K .......... .......... .......... .......... .......... 27%  272M 1s[0m
+[1;31m==> amazon-ebs.ubuntu:   6150K .......... .......... .......... .......... .......... 27% 23.5M 1s[0m
+[1;31m==> amazon-ebs.ubuntu:   6200K .......... .......... .......... .......... .......... 28%  225M 1s[0m
+[1;31m==> amazon-ebs.ubuntu:   6250K .......... .......... .......... .......... .......... 28% 37.6M 1s[0m
+[1;31m==> amazon-ebs.ubuntu:   6300K .......... .......... .......... .......... .......... 28% 34.9M 1s[0m
+[1;31m==> amazon-ebs.ubuntu:   6350K .......... .......... .......... .......... .......... 28% 28.4M 1s[0m
+[1;31m==> amazon-ebs.ubuntu:   6400K .......... .......... .......... .......... .......... 29%  117M 1s[0m
+[1;31m==> amazon-ebs.ubuntu:   6450K .......... .......... .......... .......... .......... 29%  244M 1s[0m
+[1;31m==> amazon-ebs.ubuntu:   6500K .......... .......... .......... .......... .......... 29% 30.6M 1s[0m
+[1;31m==> amazon-ebs.ubuntu:   6550K .......... .......... .......... .......... .......... 29% 89.8M 1s[0m
+[1;31m==> amazon-ebs.ubuntu:   6600K .......... .......... .......... .......... .......... 29%  274M 1s[0m
+[1;31m==> amazon-ebs.ubuntu:   6650K .......... .......... .......... .......... .......... 30% 31.0M 1s[0m
+[1;31m==> amazon-ebs.ubuntu:   6700K .......... .......... .......... .......... .......... 30% 55.0M 1s[0m
+[1;31m==> amazon-ebs.ubuntu:   6750K .......... .......... .......... .......... .......... 30% 31.9M 1s[0m
+[1;31m==> amazon-ebs.ubuntu:   6800K .......... .......... .......... .......... .......... 30%  266M 1s[0m
+[1;31m==> amazon-ebs.ubuntu:   6850K .......... .......... .......... .......... .......... 31% 28.7M 1s[0m
+[1;31m==> amazon-ebs.ubuntu:   6900K .......... .......... .......... .......... .......... 31%  248M 1s[0m
+[1;31m==> amazon-ebs.ubuntu:   6950K .......... .......... .......... .......... .......... 31% 73.0M 1s[0m
+[1;31m==> amazon-ebs.ubuntu:   7000K .......... .......... .......... .......... .......... 31% 56.2M 1s[0m
+[1;31m==> amazon-ebs.ubuntu:   7050K .......... .......... .......... .......... .......... 31%  146M 1s[0m
+[1;31m==> amazon-ebs.ubuntu:   7100K .......... .......... .......... .......... .......... 32%  104M 1s[0m
+[1;31m==> amazon-ebs.ubuntu:   7150K .......... .......... .......... .......... .......... 32% 39.8M 1s[0m
+[1;31m==> amazon-ebs.ubuntu:   7200K .......... .......... .......... .......... .......... 32% 91.7M 1s[0m
+[1;31m==> amazon-ebs.ubuntu:   7250K .......... .......... .......... .......... .......... 32% 42.0M 1s[0m
+[1;31m==> amazon-ebs.ubuntu:   7300K .......... .......... .......... .......... .......... 33% 94.7M 1s[0m
+[1;31m==> amazon-ebs.ubuntu:   7350K .......... .......... .......... .......... .......... 33%  267M 1s[0m
+[1;31m==> amazon-ebs.ubuntu:   7400K .......... .......... .......... .......... .......... 33% 44.5M 1s[0m
+[1;31m==> amazon-ebs.ubuntu:   7450K .......... .......... .......... .......... .......... 33%  123M 1s[0m
+[1;31m==> amazon-ebs.ubuntu:   7500K .......... .......... .......... .......... .......... 33% 82.0M 1s[0m
+[1;31m==> amazon-ebs.ubuntu:   7550K .......... .......... .......... .......... .......... 34%  168M 1s[0m
+[1;31m==> amazon-ebs.ubuntu:   7600K .......... .......... .......... .......... .......... 34%  188M 1s[0m
+[1;31m==> amazon-ebs.ubuntu:   7650K .......... .......... .......... .......... .......... 34% 33.9M 1s[0m
+[1;31m==> amazon-ebs.ubuntu:   7700K .......... .......... .......... .......... .......... 34% 32.8M 1s[0m
+[1;31m==> amazon-ebs.ubuntu:   7750K .......... .......... .......... .......... .......... 35%  170M 1s[0m
+[1;31m==> amazon-ebs.ubuntu:   7800K .......... .......... .......... .......... .......... 35%  155M 1s[0m
+[1;31m==> amazon-ebs.ubuntu:   7850K .......... .......... .......... .......... .......... 35% 16.1M 1s[0m
+[1;31m==> amazon-ebs.ubuntu:   7900K .......... .......... .......... .......... .......... 35% 51.3M 1s[0m
+[1;31m==> amazon-ebs.ubuntu:   7950K .......... .......... .......... .......... .......... 36%  268M 1s[0m
+[1;31m==> amazon-ebs.ubuntu:   8000K .......... .......... .......... .......... .......... 36%  266M 1s[0m
+[1;31m==> amazon-ebs.ubuntu:   8050K .......... .......... .......... .......... .......... 36% 20.0M 1s[0m
+[1;31m==> amazon-ebs.ubuntu:   8100K .......... .......... .......... .......... .......... 36%  220M 1s[0m
+[1;31m==> amazon-ebs.ubuntu:   8150K .......... .......... .......... .......... .......... 36%  143M 1s[0m
+[1;31m==> amazon-ebs.ubuntu:   8200K .......... .......... .......... .......... .......... 37%  253M 1s[0m
+[1;31m==> amazon-ebs.ubuntu:   8250K .......... .......... .......... .......... .......... 37% 12.8M 1s[0m
+[1;31m==> amazon-ebs.ubuntu:   8300K .......... .......... .......... .......... .......... 37% 88.9M 1s[0m
+[1;31m==> amazon-ebs.ubuntu:   8350K .......... .......... .......... .......... .......... 37%  260M 1s[0m
+[1;31m==> amazon-ebs.ubuntu:   8400K .......... .......... .......... .......... .......... 38%  193M 1s[0m
+[1;31m==> amazon-ebs.ubuntu:   8450K .......... .......... .......... .......... .......... 38%  198M 1s[0m
+[1;31m==> amazon-ebs.ubuntu:   8500K .......... .......... .......... .......... .......... 38% 49.1M 1s[0m
+[1;31m==> amazon-ebs.ubuntu:   8550K .......... .......... .......... .......... .......... 38% 29.6M 1s[0m
+[1;31m==> amazon-ebs.ubuntu:   8600K .......... .......... .......... .......... .......... 38%  252M 1s[0m
+[1;31m==> amazon-ebs.ubuntu:   8650K .......... .......... .......... .......... .......... 39%  219M 1s[0m
+[1;31m==> amazon-ebs.ubuntu:   8700K .......... .......... .......... .......... .......... 39% 61.9M 1s[0m
+[1;31m==> amazon-ebs.ubuntu:   8750K .......... .......... .......... .......... .......... 39% 69.9M 1s[0m
+[1;31m==> amazon-ebs.ubuntu:   8800K .......... .......... .......... .......... .......... 39%  175M 1s[0m
+[1;31m==> amazon-ebs.ubuntu:   8850K .......... .......... .......... .......... .......... 40% 65.7M 1s[0m
+[1;31m==> amazon-ebs.ubuntu:   8900K .......... .......... .......... .......... .......... 40%  264M 1s[0m
+[1;31m==> amazon-ebs.ubuntu:   8950K .......... .......... .......... .......... .......... 40% 26.7M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:   9000K .......... .......... .......... .......... .......... 40%  147M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:   9050K .......... .......... .......... .......... .......... 40%  187M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:   9100K .......... .......... .......... .......... .......... 41% 63.2M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:   9150K .......... .......... .......... .......... .......... 41% 65.6M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:   9200K .......... .......... .......... .......... .......... 41% 39.2M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:   9250K .......... .......... .......... .......... .......... 41%  206M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:   9300K .......... .......... .......... .......... .......... 42% 40.3M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:   9350K .......... .......... .......... .......... .......... 42% 15.8M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:   9400K .......... .......... .......... .......... .......... 42%  145M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:   9450K .......... .......... .......... .......... .......... 42%  125M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:   9500K .......... .......... .......... .......... .......... 42%  215M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:   9550K .......... .......... .......... .......... .......... 43% 70.2M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:   9600K .......... .......... .......... .......... .......... 43% 15.3M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:   9650K .......... .......... .......... .......... .......... 43%  127M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:   9700K .......... .......... .......... .......... .......... 43%  262M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:   9750K .......... .......... .......... .......... .......... 44%  266M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:   9800K .......... .......... .......... .......... .......... 44% 15.0M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:   9850K .......... .......... .......... .......... .......... 44%  197M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:   9900K .......... .......... .......... .......... .......... 44%  271M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:   9950K .......... .......... .......... .......... .......... 45%  269M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  10000K .......... .......... .......... .......... .......... 45% 23.3M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  10050K .......... .......... .......... .......... .......... 45% 41.5M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  10100K .......... .......... .......... .......... .......... 45%  251M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  10150K .......... .......... .......... .......... .......... 45%  259M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  10200K .......... .......... .......... .......... .......... 46%  150M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  10250K .......... .......... .......... .......... .......... 46%  186M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  10300K .......... .......... .......... .......... .......... 46%  267M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  10350K .......... .......... .......... .......... .......... 46% 31.6M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  10400K .......... .......... .......... .......... .......... 47% 19.3M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  10450K .......... .......... .......... .......... .......... 47%  203M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  10500K .......... .......... .......... .......... .......... 47%  252M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  10550K .......... .......... .......... .......... .......... 47%  267M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  10600K .......... .......... .......... .......... .......... 47%  260M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  10650K .......... .......... .......... .......... .......... 48%  222M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  10700K .......... .......... .......... .......... .......... 48% 71.7M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  10750K .......... .......... .......... .......... .......... 48% 27.4M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  10800K .......... .......... .......... .......... .......... 48% 87.9M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  10850K .......... .......... .......... .......... .......... 49% 18.0M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  10900K .......... .......... .......... .......... .......... 49%  105M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  10950K .......... .......... .......... .......... .......... 49%  118M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  11000K .......... .......... .......... .......... .......... 49%  222M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  11050K .......... .......... .......... .......... .......... 49%  223M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  11100K .......... .......... .......... .......... .......... 50% 16.7M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  11150K .......... .......... .......... .......... .......... 50% 41.7M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  11200K .......... .......... .......... .......... .......... 50%  117M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  11250K .......... .......... .......... .......... .......... 50%  234M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  11300K .......... .......... .......... .......... .......... 51% 30.5M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  11350K .......... .......... .......... .......... .......... 51% 69.1M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  11400K .......... .......... .......... .......... .......... 51%  256M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  11450K .......... .......... .......... .......... .......... 51% 38.2M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  11500K .......... .......... .......... .......... .......... 51%  166M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  11550K .......... .......... .......... .......... .......... 52% 29.4M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  11600K .......... .......... .......... .......... .......... 52%  169M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  11650K .......... .......... .......... .......... .......... 52%  205M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  11700K .......... .......... .......... .......... .......... 52%  266M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  11750K .......... .......... .......... .......... .......... 53% 41.0M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  11800K .......... .......... .......... .......... .......... 53% 62.4M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  11850K .......... .......... .......... .......... .......... 53%  136M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  11900K .......... .......... .......... .......... .......... 53%  244M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  11950K .......... .......... .......... .......... .......... 54% 32.3M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  12000K .......... .......... .......... .......... .......... 54% 52.6M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  12050K .......... .......... .......... .......... .......... 54%  192M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  12100K .......... .......... .......... .......... .......... 54%  128M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  12150K .......... .......... .......... .......... .......... 54%  189M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  12200K .......... .......... .......... .......... .......... 55%  240M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  12250K .......... .......... .......... .......... .......... 55% 21.0M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  12300K .......... .......... .......... .......... .......... 55% 33.3M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  12350K .......... .......... .......... .......... .......... 55%  111M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  12400K .......... .......... .......... .......... .......... 56% 21.3M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  12450K .......... .......... .......... .......... .......... 56%  161M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  12500K .......... .......... .......... .......... .......... 56% 56.6M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  12550K .......... .......... .......... .......... .......... 56%  233M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  12600K .......... .......... .......... .......... .......... 56%  265M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  12650K .......... .......... .......... .......... .......... 57% 22.9M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  12700K .......... .......... .......... .......... .......... 57%  271M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  12750K .......... .......... .......... .......... .......... 57% 32.6M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  12800K .......... .......... .......... .......... .......... 57% 30.3M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  12850K .......... .......... .......... .......... .......... 58% 83.2M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  12900K .......... .......... .......... .......... .......... 58%  265M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  12950K .......... .......... .......... .......... .......... 58% 32.7M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  13000K .......... .......... .......... .......... .......... 58% 31.9M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  13050K .......... .......... .......... .......... .......... 58%  197M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  13100K .......... .......... .......... .......... .......... 59% 6.61M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  13150K .......... .......... .......... .......... .......... 59% 52.4M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  13200K .......... .......... .......... .......... .......... 59%  205M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  13250K .......... .......... .......... .......... .......... 59% 41.5M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  13300K .......... .......... .......... .......... .......... 60% 77.6M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  13350K .......... .......... .......... .......... .......... 60%  262M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  13400K .......... .......... .......... .......... .......... 60%  255M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  13450K .......... .......... .......... .......... .......... 60%  221M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  13500K .......... .......... .......... .......... .......... 60%  264M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  13550K .......... .......... .......... .......... .......... 61%  264M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  13600K .......... .......... .......... .......... .......... 61%  282M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  13650K .......... .......... .......... .......... .......... 61%  236M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  13700K .......... .......... .......... .......... .......... 61%  278M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  13750K .......... .......... .......... .......... .......... 62%  263M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  13800K .......... .......... .......... .......... .......... 62%  257M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  13850K .......... .......... .......... .......... .......... 62%  224M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  13900K .......... .......... .......... .......... .......... 62%  277M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  13950K .......... .......... .......... .......... .......... 63% 30.6M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  14000K .......... .......... .......... .......... .......... 63% 31.1M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  14050K .......... .......... .......... .......... .......... 63% 37.2M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  14100K .......... .......... .......... .......... .......... 63%  263M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  14150K .......... .......... .......... .......... .......... 63%  259M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  14200K .......... .......... .......... .......... .......... 64%  258M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  14250K .......... .......... .......... .......... .......... 64% 47.2M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  14300K .......... .......... .......... .......... .......... 64% 28.0M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  14350K .......... .......... .......... .......... .......... 64%  206M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  14400K .......... .......... .......... .......... .......... 65% 39.0M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  14450K .......... .......... .......... .......... .......... 65%  116M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  14500K .......... .......... .......... .......... .......... 65%  187M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  14550K .......... .......... .......... .......... .......... 65% 21.0M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  14600K .......... .......... .......... .......... .......... 65% 50.5M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  14650K .......... .......... .......... .......... .......... 66% 8.34M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  14700K .......... .......... .......... .......... .......... 66% 95.3M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  14750K .......... .......... .......... .......... .......... 66%  161M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  14800K .......... .......... .......... .......... .......... 66%  156M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  14850K .......... .......... .......... .......... .......... 67%  128M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  14900K .......... .......... .......... .......... .......... 67%  110M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  14950K .......... .......... .......... .......... .......... 67%  183M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  15000K .......... .......... .......... .......... .......... 67% 37.3M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  15050K .......... .......... .......... .......... .......... 67% 1.91M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  15100K .......... .......... .......... .......... .......... 68%  234M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  15150K .......... .......... .......... .......... .......... 68%  261M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  15200K .......... .......... .......... .......... .......... 68%  217M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  15250K .......... .......... .......... .......... .......... 68%  199M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  15300K .......... .......... .......... .......... .......... 69%  234M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  15350K .......... .......... .......... .......... .......... 69%  256M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  15400K .......... .......... .......... .......... .......... 69%  229M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  15450K .......... .......... .......... .......... .......... 69%  208M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  15500K .......... .......... .......... .......... .......... 69%  242M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  15550K .......... .......... .......... .......... .......... 70%  255M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  15600K .......... .......... .......... .......... .......... 70%  226M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  15650K .......... .......... .......... .......... .......... 70%  227M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  15700K .......... .......... .......... .......... .......... 70%  245M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  15750K .......... .......... .......... .......... .......... 71%  254M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  15800K .......... .......... .......... .......... .......... 71%  252M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  15850K .......... .......... .......... .......... .......... 71%  203M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  15900K .......... .......... .......... .......... .......... 71%  259M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  15950K .......... .......... .......... .......... .......... 72%  253M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  16000K .......... .......... .......... .......... .......... 72%  255M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  16050K .......... .......... .......... .......... .......... 72%  239M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  16100K .......... .......... .......... .......... .......... 72%  239M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  16150K .......... .......... .......... .......... .......... 72%  259M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  16200K .......... .......... .......... .......... .......... 73%  248M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  16250K .......... .......... .......... .......... .......... 73%  191M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  16300K .......... .......... .......... .......... .......... 73%  261M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  16350K .......... .......... .......... .......... .......... 73%  151M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  16400K .......... .......... .......... .......... .......... 74% 19.4M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  16450K .......... .......... .......... .......... .......... 74% 34.6M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  16500K .......... .......... .......... .......... .......... 74%  238M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  16550K .......... .......... .......... .......... .......... 74%  261M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  16600K .......... .......... .......... .......... .......... 74% 2.71M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  16650K .......... .......... .......... .......... .......... 75%  213M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  16700K .......... .......... .......... .......... .......... 75%  265M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  16750K .......... .......... .......... .......... .......... 75%  251M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  16800K .......... .......... .......... .......... .......... 75%  256M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  16850K .......... .......... .......... .......... .......... 76%  239M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  16900K .......... .......... .......... .......... .......... 76% 1.04M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  16950K .......... .......... .......... .......... .......... 76% 32.5M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  17000K .......... .......... .......... .......... .......... 76%  203M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  17050K .......... .......... .......... .......... .......... 76%  209M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  17100K .......... .......... .......... .......... .......... 77%  167M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  17150K .......... .......... .......... .......... .......... 77%  149M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  17200K .......... .......... .......... .......... .......... 77%  249M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  17250K .......... .......... .......... .......... .......... 77%  232M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  17300K .......... .......... .......... .......... .......... 78%  200M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  17350K .......... .......... .......... .......... .......... 78%  146M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  17400K .......... .......... .......... .......... .......... 78%  243M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  17450K .......... .......... .......... .......... .......... 78%  201M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  17500K .......... .......... .......... .......... .......... 78%  267M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  17550K .......... .......... .......... .......... .......... 79% 18.4M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  17600K .......... .......... .......... .......... .......... 79% 36.6M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  17650K .......... .......... .......... .......... .......... 79% 2.95M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  17700K .......... .......... .......... .......... .......... 79%  113M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  17750K .......... .......... .......... .......... .......... 80%  198M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  17800K .......... .......... .......... .......... .......... 80% 51.5M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  17850K .......... .......... .......... .......... .......... 80% 25.8M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  17900K .......... .......... .......... .......... .......... 80%  256M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  17950K .......... .......... .......... .......... .......... 81%  151M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  18000K .......... .......... .......... .......... .......... 81%  259M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  18050K .......... .......... .......... .......... .......... 81%  235M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  18100K .......... .......... .......... .......... .......... 81% 51.2M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  18150K .......... .......... .......... .......... .......... 81% 26.2M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  18200K .......... .......... .......... .......... .......... 82%  140M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  18250K .......... .......... .......... .......... .......... 82%  226M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  18300K .......... .......... .......... .......... .......... 82%  153M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  18350K .......... .......... .......... .......... .......... 82% 30.6M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  18400K .......... .......... .......... .......... .......... 83% 3.44M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  18450K .......... .......... .......... .......... .......... 83% 77.2M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  18500K .......... .......... .......... .......... .......... 83% 59.2M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  18550K .......... .......... .......... .......... .......... 83% 66.9M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  18600K .......... .......... .......... .......... .......... 83% 49.0M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  18650K .......... .......... .......... .......... .......... 84% 86.0M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  18700K .......... .......... .......... .......... .......... 84% 61.9M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  18750K .......... .......... .......... .......... .......... 84% 43.8M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  18800K .......... .......... .......... .......... .......... 84%  145M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  18850K .......... .......... .......... .......... .......... 85% 42.7M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  18900K .......... .......... .......... .......... .......... 85%  216M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  18950K .......... .......... .......... .......... .......... 85% 51.8M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  19000K .......... .......... .......... .......... .......... 85% 38.9M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  19050K .......... .......... .......... .......... .......... 85% 56.0M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  19100K .......... .......... .......... .......... .......... 86% 50.0M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  19150K .......... .......... .......... .......... .......... 86%  169M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  19200K .......... .......... .......... .......... .......... 86% 69.6M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  19250K .......... .......... .......... .......... .......... 86% 51.1M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  19300K .......... .......... .......... .......... .......... 87% 41.9M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  19350K .......... .......... .......... .......... .......... 87% 4.52M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  19400K .......... .......... .......... .......... .......... 87% 97.0M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  19450K .......... .......... .......... .......... .......... 87% 35.3M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  19500K .......... .......... .......... .......... .......... 87%  154M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  19550K .......... .......... .......... .......... .......... 88%  251M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  19600K .......... .......... .......... .......... .......... 88% 45.3M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  19650K .......... .......... .......... .......... .......... 88% 76.3M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  19700K .......... .......... .......... .......... .......... 88%  143M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  19750K .......... .......... .......... .......... .......... 89%  244M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  19800K .......... .......... .......... .......... .......... 89% 26.9M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  19850K .......... .......... .......... .......... .......... 89% 70.1M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  19900K .......... .......... .......... .......... .......... 89%  256M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  19950K .......... .......... .......... .......... .......... 90%  205M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  20000K .......... .......... .......... .......... .......... 90%  165M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  20050K .......... .......... .......... .......... .......... 90% 25.8M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  20100K .......... .......... .......... .......... .......... 90% 45.5M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  20150K .......... .......... .......... .......... .......... 90% 72.5M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  20200K .......... .......... .......... .......... .......... 91%  236M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  20250K .......... .......... .......... .......... .......... 91%  191M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  20300K .......... .......... .......... .......... .......... 91%  189M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  20350K .......... .......... .......... .......... .......... 91%  260M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  20400K .......... .......... .......... .......... .......... 92% 21.2M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  20450K .......... .......... .......... .......... .......... 92% 87.7M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  20500K .......... .......... .......... .......... .......... 92%  169M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  20550K .......... .......... .......... .......... .......... 92%  248M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  20600K .......... .......... .......... .......... .......... 92%  259M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  20650K .......... .......... .......... .......... .......... 93% 4.98M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  20700K .......... .......... .......... .......... .......... 93%  160M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  20750K .......... .......... .......... .......... .......... 93%  259M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  20800K .......... .......... .......... .......... .......... 93%  275M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  20850K .......... .......... .......... .......... .......... 94% 30.0M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  20900K .......... .......... .......... .......... .......... 94%  249M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  20950K .......... .......... .......... .......... .......... 94%  167M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  21000K .......... .......... .......... .......... .......... 94%  264M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  21050K .......... .......... .......... .......... .......... 94% 23.8M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  21100K .......... .......... .......... .......... .......... 95% 45.0M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  21150K .......... .......... .......... .......... .......... 95%  254M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  21200K .......... .......... .......... .......... .......... 95%  254M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  21250K .......... .......... .......... .......... .......... 95%  182M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  21300K .......... .......... .......... .......... .......... 96%  204M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  21350K .......... .......... .......... .......... .......... 96% 26.4M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  21400K .......... .......... .......... .......... .......... 96% 70.0M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  21450K .......... .......... .......... .......... .......... 96%  220M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  21500K .......... .......... .......... .......... .......... 96%  204M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  21550K .......... .......... .......... .......... .......... 97%  178M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  21600K .......... .......... .......... .......... .......... 97% 29.2M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  21650K .......... .......... .......... .......... .......... 97% 40.1M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  21700K .......... .......... .......... .......... .......... 97%  156M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  21750K .......... .......... .......... .......... .......... 98%  267M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  21800K .......... .......... .......... .......... .......... 98%  269M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  21850K .......... .......... .......... .......... .......... 98%  127M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  21900K .......... .......... .......... .......... .......... 98% 74.4M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  21950K .......... .......... .......... .......... .......... 99% 17.4M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  22000K .......... .......... .......... .......... .......... 99%  231M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  22050K .......... .......... .......... .......... .......... 99%  235M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  22100K .......... .......... .......... .......... .......... 99% 8.81M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  22150K .......... .......... .......... .......... .......... 99% 81.3M 0s[0m
+[1;31m==> amazon-ebs.ubuntu:  22200K .......... .......                                    100%  255M=0.7s[0m
 [1;31m==> amazon-ebs.ubuntu:[0m
-[1;31m==> amazon-ebs.ubuntu: 2023-02-27 16:34:11 (18.0 MB/s) - ‘latest.tar.gz’ saved [22751086/22751086][0m
+[1;31m==> amazon-ebs.ubuntu: 2023-02-27 20:09:26 (32.4 MB/s) - ‘latest.tar.gz’ saved [22751086/22751086][0m
 [1;31m==> amazon-ebs.ubuntu:[0m
 [0;32m    amazon-ebs.ubuntu: wordpress/[0m
 [0;32m    amazon-ebs.ubuntu: wordpress/xmlrpc.php[0m
@@ -4450,7 +4460,7 @@
 [0;32m    amazon-ebs.ubuntu:   python3-certbot-apache python3-configargparse python3-icu python3-josepy[0m
 [0;32m    amazon-ebs.ubuntu:   python3-parsedatetime python3-requests-toolbelt python3-rfc3339[0m
 [0;32m    amazon-ebs.ubuntu:   python3-zope.component python3-zope.event python3-zope.hookable[0m
-[0;32m    amazon-ebs.ubuntu: 0 upgraded, 16 newly installed, 0 to remove and 15 not upgraded.[0m
+[0;32m    amazon-ebs.ubuntu: 0 upgraded, 16 newly installed, 0 to remove and 17 not upgraded.[0m
 [0;32m    amazon-ebs.ubuntu: Need to get 1552 kB of archives.[0m
 [0;32m    amazon-ebs.ubuntu: After this operation, 7681 kB of additional disk space will be used.[0m
 [0;32m    amazon-ebs.ubuntu: Get:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy/universe amd64 augeas-lenses all 1.13.0-1 [321 kB][0m
@@ -4469,15 +4479,15 @@
 [0;32m    amazon-ebs.ubuntu: Get:14 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy/universe amd64 certbot all 1.21.0-1build1 [21.3 kB][0m
 [0;32m    amazon-ebs.ubuntu: Get:15 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy/universe amd64 python3-certbot-apache all 1.21.0-1 [64.2 kB][0m
 [0;32m    amazon-ebs.ubuntu: Get:16 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy/main amd64 python3-icu amd64 2.8.1-0ubuntu2 [540 kB][0m
+[0;32m    amazon-ebs.ubuntu: Fetched 1552 kB in 0s (19.5 MB/s)[0m
 [1;31m==> amazon-ebs.ubuntu: debconf: unable to initialize frontend: Dialog[0m
-[0;32m    amazon-ebs.ubuntu: Fetched 1552 kB in 0s (10.4 MB/s)[0m
-[0;32m    amazon-ebs.ubuntu: Selecting previously unselected package augeas-lenses.[0m
 [1;31m==> amazon-ebs.ubuntu: debconf: (Dialog frontend will not work on a dumb terminal, an emacs shell buffer, or without a controlling terminal.)[0m
 [1;31m==> amazon-ebs.ubuntu: debconf: falling back to frontend: Readline[0m
 [1;31m==> amazon-ebs.ubuntu: debconf: unable to initialize frontend: Readline[0m
 [1;31m==> amazon-ebs.ubuntu: debconf: (This frontend requires a controlling tty.)[0m
 [1;31m==> amazon-ebs.ubuntu: debconf: falling back to frontend: Teletype[0m
 [1;31m==> amazon-ebs.ubuntu: dpkg-preconfigure: unable to re-open stdin:[0m
+[0;32m    amazon-ebs.ubuntu: Selecting previously unselected package augeas-lenses.[0m
 [0;32m    amazon-ebs.ubuntu: (Reading database ... 65126 files and directories currently installed.)[0m
 [0;32m    amazon-ebs.ubuntu: Preparing to unpack .../00-augeas-lenses_1.13.0-1_all.deb ...[0m
 [0;32m    amazon-ebs.ubuntu: Unpacking augeas-lenses (1.13.0-1) ...[0m
@@ -4555,29 +4565,28 @@
 [0;32m    amazon-ebs.ubuntu: No user sessions are running outdated binaries.[0m
 [0;32m    amazon-ebs.ubuntu:[0m
 [0;32m    amazon-ebs.ubuntu: No VM guests are running outdated hypervisor (qemu) binaries on this host.[0m
-[1;31m==> amazon-ebs.ubuntu: Saving debug log to /var/log/letsencrypt/letsencrypt.log[0m
-[1;31m==> amazon-ebs.ubuntu: An unexpected error occurred:[0m
-[1;31m==> amazon-ebs.ubuntu: EOFError[0m
-[1;31m==> amazon-ebs.ubuntu: Ask for help or search for solutions at https://community.letsencrypt.org. See the logfile /var/log/letsencrypt/letsencrypt.log or re-run Certbot with -v for more details.[0m
-[0;32m    amazon-ebs.ubuntu: *** Remember to run Enter email address (used for urgent renewal and security notices)[0m
-[0;32m    amazon-ebs.ubuntu:  (Enter 'c' to cancel):  to install SSL certificate to Apache ***[0m
+[1;32m==> amazon-ebs.ubuntu: Uploading bin => ~/bin[0m
+[1;32m==> amazon-ebs.ubuntu: Provisioning with shell script: /var/folders/93/l53016z97jqfm3sh0l12rjlm0000gn/T/packer-shell3474180382[0m
 [1;32m==> amazon-ebs.ubuntu: Stopping the source instance...[0m
 [0;32m    amazon-ebs.ubuntu: Stopping instance[0m
 [1;32m==> amazon-ebs.ubuntu: Waiting for the instance to stop...[0m
-[1;32m==> amazon-ebs.ubuntu: Creating AMI aws-wp-ubuntu from instance i-0704cba7ce6dfeaa9[0m
-[0;32m    amazon-ebs.ubuntu: AMI: ami-09f11906ca7f01e6e[0m
+[1;32m==> amazon-ebs.ubuntu: Creating AMI iurisman-wp-ubuntu from instance i-0cdae3b7b884d7784[0m
+[0;32m    amazon-ebs.ubuntu: AMI: ami-0ee718abedb1a4aed[0m
 [1;32m==> amazon-ebs.ubuntu: Waiting for AMI to become ready...[0m
 [1;32m==> amazon-ebs.ubuntu: Skipping Enable AMI deprecation...[0m
+[1;32m==> amazon-ebs.ubuntu: Modifying attributes on AMI (ami-0ee718abedb1a4aed)...[0m
+[0;32m    amazon-ebs.ubuntu: Modifying: description[0m
+[1;32m==> amazon-ebs.ubuntu: Modifying attributes on snapshot (snap-07cb68626af9ec7bc)...[0m
 [1;32m==> amazon-ebs.ubuntu: Terminating the source AWS instance...[0m
 [1;32m==> amazon-ebs.ubuntu: Cleaning up any extra volumes...[0m
 [1;32m==> amazon-ebs.ubuntu: No volumes to clean up, skipping[0m
 [1;32m==> amazon-ebs.ubuntu: Deleting temporary security group...[0m
 [1;32m==> amazon-ebs.ubuntu: Deleting temporary keypair...[0m
-[1;32mBuild 'amazon-ebs.ubuntu' finished after 6 minutes 30 seconds.[0m
+[1;32mBuild 'amazon-ebs.ubuntu' finished after 9 minutes 13 seconds.[0m
 
-==> Wait completed after 6 minutes 30 seconds
+==> Wait completed after 9 minutes 13 seconds
 
 ==> Builds finished. The artifacts of successful builds are:
 --> amazon-ebs.ubuntu: AMIs were created:
-us-east-1: ami-09f11906ca7f01e6e
+us-east-1: ami-0ee718abedb1a4aed
 
