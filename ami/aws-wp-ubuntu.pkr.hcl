@@ -1,3 +1,11 @@
+/*****************************************************************************
+Create an Amazon Machine Image with the latest Wordpress and all supporting
+software. The AWS credentials must be provided in the environment the standard
+way expected by the AWS clients.
+
+Copyright 2023 Igor Urisman. See LICENCE for details.
+*****************************************************************************/
+
 packer {
   required_plugins {
     amazon = {
@@ -8,9 +16,11 @@ packer {
 }
 
 source "amazon-ebs" "ubuntu" {
-  ami_name      = "aws-wp-ubuntu"
   instance_type = "t2.micro"
-  region        = "us-west-2"
+  // Change this if you want a different name for your AMI
+  ami_name      = "aws-wp-ubuntu"
+  // change this if you want the AMI to be created in a different region.
+  region        = "us-east-1"
   source_ami_filter {
     filters = {
       name                = "ubuntu/images/hvm-ssd/ubuntu-jammy-22.04-amd64-server-*"
@@ -24,8 +34,13 @@ source "amazon-ebs" "ubuntu" {
 }
 
 build {
-  name = "learn-packer"
+  //name = "learn-packer"
   sources = [
     "source.amazon-ebs.ubuntu"
   ]
+  provisioner "shell" {
+    environment_vars = []
+    script = "build.sh"
+  }
+
 }
