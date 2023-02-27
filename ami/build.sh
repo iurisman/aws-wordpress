@@ -23,3 +23,9 @@ echo "Installing Certbot"
 sudo add-apt-repository ppa:certbot/certbot
 sudo apt install -y certbot python3-certbot-apache
 
+echo "Setting up swapfile"
+sudo dd if=/dev/zero of=/swapfile bs=64M count=32
+sudo chmod 600 /swapfile
+sudo mkswap /swapfile
+sudo swapon /swapfile
+echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab

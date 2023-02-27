@@ -11,6 +11,10 @@
 * Launch an EC2 instance from AMI `iurisman-wp-ubuntu` built in step 1. Be sure to use an SSH keypair and to choose 
 a security group that allows SSH, HTTP, and HTTPS inbound traffic and all outbound traffic. 
 
+* SSH onto the instance with
+```shell
+$ ssh -i /path/to/private/key ubuntu@<public-ip-address>
+```
 
 * Setup the database schema by running
 ```shell
@@ -27,6 +31,14 @@ to the Wordpress intallation:
     DocumentRoot /var/www/html/wordpress
     ...
 ```
+
+* Reload Apache to enable the new config:
+```shell
+$ sudo systemctl restart apache2
+```
+
+* Point your browser to the EC2 instance at `http://<public-ip-address>`. This will bring the Wordpress setup dialog:
+![Wordpress Setup](images/wp-setup.png)
 
 ## 3. Optional Post-Initialization Steps
 ### 3.1. Periodic Status Check
