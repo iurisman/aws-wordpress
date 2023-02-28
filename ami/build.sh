@@ -5,6 +5,8 @@
 echo "Installing Apache 2 web server ..."
 sudo apt-get update
 sudo apt install -y apache2
+# Apache should run as os user ubuntu in order to access wordpress files.
+sudo sed -i 's/www-data/ubuntu/g' /etc/apache2/envvars
 
 echo "Installing PHP runtime and PHP MySQL connector ..."
 sudo apt install -y php libapache2-mod-php php-mysql
@@ -17,6 +19,7 @@ cd /tmp
 wget https://wordpress.org/latest.tar.gz
 tar -xvf latest.tar.gz
 sudo mv wordpress/ /var/www/html
+sudo sed -i 's|/var/www/html|/var/www/html/wordpress|g' /etc/apache2/sites-available/000-default.conf
 sudo systemctl restart apache2
 
 echo "Installing Certbot"
