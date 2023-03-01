@@ -21,5 +21,6 @@ tar -cvf $tempdir/wp_root.tar $wp_root
 mysqldump -u "$mysql_user" --password="$mysql_passwrd" --all-databases > $tempdir/mysqldump.sql
 # Upload to S3
 timestamp=$(date +%F_%T)
-zip $tempdir/site-backup-$timestamp.zip $tempdir/wp_root.tar $tempdir/mysqldump.sql
+zip -j $tempdir/site-backup-$timestamp.zip $tempdir/wp_root.tar $tempdir/mysqldump.sql
 aws s3 cp $tempdir/site-backup-$timestamp.zip $s3_bucket_uri/site-backup-$timestamp.zip
+rm -rf $tempdir

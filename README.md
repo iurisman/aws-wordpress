@@ -20,11 +20,13 @@ $ ssh -i /path/to/private/key ubuntu@<public-ip-address>
 ```shell
 $ bin/schema.sh
 ```
-Since this is a new MySQL instance, you will be prompted for the database's root password. The script will also 
-create a separate database user `wp_user` who will own the `wp` schema containibng the Wordpress related tables. 
-You will be prompted for the password for `wp_user` as well.
+Since this is a new MySQL instance, you will be prompted to created passwords for two database users: The user `root`
+is the superuser account that will be (optionally) used for database backups. The user `wp_user` is the account
+who will own the `wp` database required by Wordpress. You may edit the script before running it if you'd rather use
+different names for the Wordpress database or account. 
 
-2.4 Point your browser to the EC2 instance at `http://<public-ip-address>`. This will bring the Wordpress setup dialog:
+2.4 Point your browser to the EC2 instance at `http://<public-ip-address>`. This will bring the Wordpress language 
+dialog:
 ![Wordpress Language](images/wp-language.png)
 Chose your language and press `Continue`
 
@@ -40,6 +42,16 @@ Database Host	    Leave the default `localhost`
 Table Prefix        Leve the default `wp_`
 ```
 
-## 3. Optional Post-Initialization Steps
-### 3.1. Periodic Status Check
-### 3.2. Periodic Backups
+## 3. DNS and SSL Changes (TBD)
+* Static IP address
+* Update DNS
+* Once it works, cut certificate
+```shell
+$ sudo certbot --apache
+```
+## 4. Optional Post-Initialization Steps
+### 4.1. Periodic Status Check
+### 4.2. Periodic Backups
+
+## 5. Advanced Topics
+### 5.1. Running muliple sites from the same server.

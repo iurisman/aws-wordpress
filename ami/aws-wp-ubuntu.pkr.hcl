@@ -16,7 +16,7 @@ packer {
 source "amazon-ebs" "ubuntu" {
   instance_type = "t2.micro"
   // Change this if you want a different name for your AMI
-  ami_name      = "iurisman-wp-ubuntu"
+  ami_name      = "wordpress-ubuntu"
   ami_description = "https://github.com/iurisman/aws-wordpress"
   // change this if you want the AMI to be created in a different region.
   region        = "us-east-1"

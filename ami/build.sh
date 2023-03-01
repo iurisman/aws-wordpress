@@ -14,6 +14,9 @@ sudo apt install -y php libapache2-mod-php php-mysql
 echo "Installing MySQL server"
 sudo apt install -y mysql-server
 
+echo "Installing AWS CLI"
+sudo apt install -y awscli
+
 echo "Installing Wordpress"
 cd /tmp
 wget https://wordpress.org/latest.tar.gz
@@ -21,6 +24,9 @@ tar -xvf latest.tar.gz
 sudo mv wordpress/ /var/www/html
 sudo sed -i 's|/var/www/html|/var/www/html/wordpress|g' /etc/apache2/sites-available/000-default.conf
 sudo systemctl restart apache2
+
+echo "Installing zip utils"
+sudo apt install -y zip
 
 echo "Installing Certbot"
 sudo add-apt-repository ppa:certbot/certbot
