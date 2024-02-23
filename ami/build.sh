@@ -1,7 +1,8 @@
 #!/bin/sh
 #
-# This is run by packer while bulding the AMI.
+# This is run by packer while building the AMI.
 #
+
 echo "Installing Apache 2 web server ..."
 sudo apt-get update
 sudo apt install -y apache2
@@ -29,7 +30,7 @@ echo "Installing zip utils"
 sudo apt install -y zip
 
 echo "Installing Certbot"
-sudo add-apt-repository ppa:certbot/certbot
+sudo snap install --classic certbot
 sudo apt install -y certbot python3-certbot-apache
 
 echo "Setting up swapfile"

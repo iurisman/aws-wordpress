@@ -14,6 +14,15 @@ mysql_user=$2
 mysql_passwrd=$3
 s3_bucket_uri=$4
 
+# Error trap handler. As an example, sends an email notification.
+# $1 == the line number that sent the ERR signal.
+on_error() {
+  aws ses send-email --from <your-email> --to <your-email> --subject "Backup failed for $s3_bucket_uri" --text "Error at line $1"
+  exit 7
+}
+# Catch any error by trapping the ERR signal.
+trap 'on_error $LINENO' ERR
+
 # Site backup
 tempdir=$(mktemp -d)
 tar -cvf $tempdir/wp_root.tar $wp_root

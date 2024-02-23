@@ -1,6 +1,7 @@
-
 .idea
 /status-check/target/
 /status-check/.bsp/
 /status-check/project/target/
 /status-check/project/project/
+/project/
+/target/

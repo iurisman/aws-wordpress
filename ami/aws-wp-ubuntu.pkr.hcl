@@ -33,7 +33,6 @@ source "amazon-ebs" "ubuntu" {
 }
 
 build {
-  //name = "learn-packer"
   sources = [
     "source.amazon-ebs.ubuntu"
   ]
