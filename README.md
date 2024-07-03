@@ -17,9 +17,10 @@ $ packer install .
 ```
 1.4 Build the AMI:
 ```shell
-$ packer build aws-wp-ubuntu.pkr.hcl 
+$ packer build aws-wp-ubuntu.pkr.hcl 2>&1 > build.log 
 ```
-This will build the `wordpress-ubuntu` AMI with everything installed.
+This will build the `wordpress-ubuntu` AMI with everything installed. Inspect the log file
+for errors with `less -R`.
 
 ### 2. Initializing a New Wordpress Server
 2.1 Launch an EC2 instance from AMI `wordpress-ubuntu` built in step 1. Be sure to use an SSH keypair and to choose 
@@ -30,7 +31,7 @@ a security group that allows SSH, HTTP, and HTTPS inbound traffic and all outbou
 $ ssh -i /path/to/private/key ubuntu@<public-ip-address>
 ```
 
-2.3 Create an E IP Address and associate it with the running instance. If you're
+2.3 Create an Elastic IP Address and associate it with the running instance. If you're
 restoring from a backup, reuse the Elastic IP Address from the server you're restoring.
 
 2.4 Update your domain's DNS A for mydomain.com (and likely CNAME for www.mydomain.com) records. Skip this step
@@ -88,12 +89,28 @@ adding the following line:
 
 `<mysql-user>` is typically `root`, unless you edited `schema.sh`.
 
-To restore from the backup:
-
-1. Launch a fresh EC2 instance with a newly installed Wordpress by 
-   * Follow steps in Section 1, unless you've saved the AMI from the previous run or have made changes to the
-   packer file.
-   * Follow steps 2.1 through 2.6.
+#### 3.3. Restoring from a Backup
+NB: The Site URL is saved in Wordpress database as a general setting. The process below 
+will only work for restoring for the same domain name. 
+1. Launch a fresh EC2 instance from the Wordpress AMI built in Section 1 and `ssh` to it.
+2. Copy the latest ZIP backup from S3:
+```shell
+aws s3 cp <S3-URL> .
+```
+3. Unzip
+```shell
+unzip site-backup-<date>.zip 
+```
+This will inflate 2 files: the wordpress backup TAR archive and the MySQL export SQL file.
+4. Untar the wordpress backup and simply move the var/www/html to /var/www/
+5. Before you can run the mysql restore, repeate step 2.6 to create the root mysql account
+Then run
+```shell
+mysql -u root --password=root-password < mysqldump.sql
+```
+6. Repeat steps ...
 
 ### 5. Advanced Topics
-#### 5.1. Running muliple sites from the same server. (TBD)
+#### 5.1. Site monitoring
+
+#### 5.2. Running muliple sites from the same server. (TBD)

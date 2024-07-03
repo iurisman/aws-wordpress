@@ -9,7 +9,7 @@ if [[ $# -ne 4 ]]; then
   echo "Usage: $me <wordpress-root-dir> <mysql-username> <mysql-password> <s3-bucket-uri>"
   exit 2
 fi
-wp_root=$1
+wp_root=$1nn
 mysql_user=$2
 mysql_passwrd=$3
 s3_bucket_uri=$4

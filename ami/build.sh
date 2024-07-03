@@ -2,9 +2,10 @@
 #
 # This is run by packer while building the AMI.
 #
+set -x
+sudo apt update
 
 echo "Installing Apache 2 web server ..."
-sudo apt-get update
 sudo apt install -y apache2
 # Apache should run as os user ubuntu in order to access wordpress files.
 sudo sed -i 's/www-data/ubuntu/g' /etc/apache2/envvars
