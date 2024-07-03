@@ -1,4 +1,4 @@
-package urisman.wp.ping
+package urisman.wp.monitor
 
 import org.scalatest.wordspec.AnyWordSpec
 import com.amazonaws.services.lambda.runtime.{Context, LambdaLogger}
