@@ -48,10 +48,7 @@ class LambdaHandler extends RequestHandler[ScheduledEvent, String] with Config {
 		conn.setRequestMethod ("GET")
 		val rc = Try {
 			Await.result(Future(conn.getResponseCode), ScalaDuration(networkTimeoutMillis, MILLISECONDS))
-			} match {
-			case Failure(e) => Left(e)
-			case Success(rc) => Right(rc)
-		}
+		}.toEither
 		(rc, Duration.between(start, Instant.now()).toMillis)
 	}
 }
