@@ -4,7 +4,7 @@ lazy val root = project
   .in(file("."))
   .settings(
         name := "aws-wordpress-status-check",
-        version := "0.1.0-SNAPSHOT",
+        version := "2.0",
 
         scalaVersion := scala3Version,
 

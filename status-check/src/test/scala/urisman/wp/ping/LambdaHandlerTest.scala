@@ -9,6 +9,7 @@ import java.time.LocalDateTime
 import java.util.logging.Logger
 
 class LambdaHandlerTest extends AnyWordSpec with Matchers {
+
   val context: Context = new Context {
     override def getAwsRequestId = "?"
     override def getLogGroupName = "?"
@@ -29,7 +30,7 @@ class LambdaHandlerTest extends AnyWordSpec with Matchers {
   "LambdaHandler" should {
     "succeed" in {
       val resp = new LambdaHandler().handleRequest(new ScheduledEvent(), context)
-      resp mustBe "urisman.net: OK"
+      resp mustBe "Wordpress sites check: OK"
     }
   }
 }
