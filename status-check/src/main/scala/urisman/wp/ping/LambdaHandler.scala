@@ -3,9 +3,9 @@ package urisman.wp.ping
 import com.amazonaws.services.lambda.runtime.{Context, RequestHandler}
 import com.amazonaws.services.lambda.runtime.events.ScheduledEvent
 
-import java.net.{HttpURLConnection, URL}
+import java.net.{HttpURLConnection, InetAddress, URL}
 import java.time.{Duration, Instant}
-import scala.concurrent.{Future, Await}
+import scala.concurrent.{Await, Future}
 import scala.io.Source
 import scala.concurrent.duration.{MILLISECONDS, Duration as ScalaDuration}
 import scala.util.{Failure, Success, Try}
@@ -13,7 +13,7 @@ import scala.util.{Failure, Success, Try}
 class LambdaHandler extends RequestHandler[ScheduledEvent, String] with Config {
 
 	def handleRequest(event: ScheduledEvent, context: Context): String = {
-		val (failedCount, emailBody) =
+		val (failedCount, body) =
 			sites.foldLeft((0, "")) {  // (failure count, body)
 			(acc, url) =>
 				val (either, latency) = checkSite(url)
@@ -28,8 +28,8 @@ class LambdaHandler extends RequestHandler[ScheduledEvent, String] with Config {
 						val body = acc._2 + s"\n$url returned $rc in $latency ms"
 						(failCount, body)
 				}
-
-		}
+			}
+		val emailBody = body + s"\n(${InetAddress.getLocalHost.getHostName})"
 		val emailSubject =
 			"Wordpress sites check: " +
 				(if (failedCount == 0) "OK" else s"$failedCount Sites Failed")
