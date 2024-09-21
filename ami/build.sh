@@ -10,13 +10,13 @@ sudo apt install -y apache2
 sudo sed -i 's/www-data/ubuntu/g' /etc/apache2/envvars
 
 echo "Installing PHP runtime and PHP MySQL connector ..."
-sudo apt install -y php libapache2-mod-php php-mysql
+sudo apt install -y php libapache2-mod-php php-mysql php-gd
 
 echo "Installing MySQL server"
 sudo apt install -y mysql-server
 
 echo "Installing AWS CLI"
-sudo apt install -y awscli
+sudo apt install -y aws-cli
 
 echo "Installing Wordpress"
 cd /tmp

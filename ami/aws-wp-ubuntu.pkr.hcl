@@ -18,17 +18,18 @@ source "amazon-ebs" "ubuntu" {
   // Change this if you want a different name for your AMI
   ami_name      = "wordpress-ubuntu"
   ami_description = "https://github.com/iurisman/aws-wordpress"
+  source_ami = "ami-0e86e20dae9224db8"
   // change this if you want the AMI to be created in a different region.
   region        = "us-east-1"
-  source_ami_filter {
-    filters = {
-      name                = "ubuntu/images/hvm-ssd/ubuntu-jammy-22.04-amd64-server-*"
-      root-device-type    = "ebs"
-      virtualization-type = "hvm"
-    }
-    most_recent = true
-    owners      = ["099720109477"]
-  }
+//  source_ami_filter {
+//    filters = {
+//      name                = "ubuntu/images/hvm-ssd/ubuntu-22.04-amd64-server-*"
+//      root-device-type    = "ebs"
+//      virtualization-type = "hvm"
+//    }
+//    most_recent = true
+//    owners      = ["099720109477"]
+//  }
   ssh_username = "ubuntu"
 }
 

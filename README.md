@@ -17,9 +17,10 @@ $ packer install .
 ```
 1.4 Build the AMI:
 ```shell
+$ cd ami
 $ packer build aws-wp-ubuntu.pkr.hcl 2>&1 > build.log 
 ```
-This will build the `wordpress-ubuntu` AMI with everything installed. Inspect the log file
+This will build the `wordpress-ubuntu` AMI with everything required to run Wordpress. Inspect the log file
 for errors with `less -R`.
 
 ### 2. Initializing a New Wordpress Server
